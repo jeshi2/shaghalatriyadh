@@ -262,5 +262,100 @@
       "backToServices": "Back to services",
       "askAbout": "Ask about this service"
     }
+  },
+  "aboutPage": {
+    "eyebrow": "About us",
+    "title": "A domestic services agency that works transparently with families in Qatar",
+    "description": "We help households find someone they can rely on at home, and we explain every step and cost before anything is agreed.",
+    "metaTitle": "About us",
+    "metaDescription": "How we work to provide domestic staff and home services in Qatar: a clear choice, proper paperwork, and follow-up after the work starts.",
+    "storyTitle": "What we do",
+    "story": [
+      "We work between families in Qatar and the people who provide domestic help. Our job is to save you the searching and comparing: we listen to what you need, shortlist the people who fit it, and handle the official steps so the work starts properly documented.",
+      "Hiring someone into your home is a decision that belongs to the family, so we do not push to close an agreement and we do not send more candidates than you asked for. We tell you what we know about each candidate, and what we do not, and leave the decision to you after the interview."
+    ],
+    "valuesTitle": "What we commit to",
+    "values": {
+      "clarity": {
+        "title": "Clarity before agreement",
+        "description": "You know the cost, what it covers and how long the formalities take before any financial commitment."
+      },
+      "legal": {
+        "title": "Following the rules",
+        "description": "Contracts and procedures in line with the regulations in force in Qatar, with clear rights on both sides."
+      },
+      "respect": {
+        "title": "Respect both ways",
+        "description": "We treat workers the way we treat families: written terms and mutual respect."
+      },
+      "support": {
+        "title": "Follow-up after the start",
+        "description": "We stay in touch once work has begun so any issue is dealt with while it is still small."
+      }
+    },
+    "areasTitle": "Areas we serve",
+    "areasDescription": "We cover Doha and the surrounding areas. If your area is not listed, ask us and we will confirm whether it is covered.",
+    "detailsTitle": "Office details"
+  },
+  "howItWorksPage": {
+    "eyebrow": "How it works",
+    "title": "The process from your first message to the first day of work",
+    "description": "This is how we actually work, and what we need from you at each stage.",
+    "metaTitle": "How it works",
+    "metaDescription": "The steps for hiring domestic help in Qatar: your request, the options, the interview, the contract and formalities, then follow-up after work starts.",
+    "stepsTitle": "The steps in detail",
+    "steps": [
+      {
+        "title": "Send us your request",
+        "description": "The easiest route is a WhatsApp message with the service you need, your area, and the hours or working days you have in mind. You can also call during working hours.",
+        "need": "What we need from you: the service, your area, and a good time to reach you."
+      },
+      {
+        "title": "We explain the options and the cost",
+        "description": "A few short questions about the size of the home, the household and the tasks involved, then the available options with what each one costs and covers.",
+        "need": "What we need from you: details of the home and the expected tasks."
+      },
+      {
+        "title": "You review candidates and interview",
+        "description": "We send the profiles that fit, with experience and spoken languages, and you choose who to interview. The interview happens before any commitment.",
+        "need": "What we need from you: a time for the interview and your decision."
+      },
+      {
+        "title": "Contract and formalities",
+        "description": "Once you have chosen, we prepare the contract and complete the required steps such as the visa and medical check, depending on the type of placement, and tell you which documents we need.",
+        "need": "What we need from you: the official documents required for the contract."
+      },
+      {
+        "title": "Work starts, and we follow up",
+        "description": "In the first weeks we check in to make sure things are going as agreed and to deal with any issue early.",
+        "need": "What we need from you: honest feedback, early."
+      }
+    ],
+    "documentsTitle": "Documents we may ask for",
+    "documents": [
+      "A copy of the applicant's ID",
+      "The tenancy contract or other proof of address",
+      "Up-to-date contact details",
+      "Further documents depending on the placement type and official requirements"
+    ],
+    "timingTitle": "How long it takes",
+    "timingDescription": "It depends on the service, candidate availability and the official formalities. Cleaning by the hour can be arranged quickly, while a full-time placement needs time for the contract and visa. We give you an estimate for your case at first contact."
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Reach us the way that suits you",
+    "description": "WhatsApp is the fastest way to get a reply. You can also call or email us during working hours.",
+    "metaTitle": "Contact us",
+    "metaDescription": "Get in touch about a housemaid or a cleaning service in Qatar: WhatsApp, phone, email, office address and opening hours.",
+    "channelsTitle": "Ways to reach us",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDescription": "The fastest option. Send us your request and we reply within working hours.",
+    "phoneTitle": "Phone",
+    "phoneDescription": "For a direct call during working hours.",
+    "emailTitle": "Email",
+    "emailDescription": "For requests that need documents or written detail.",
+    "addressTitle": "Address",
+    "hoursTitle": "Opening hours",
+    "hoursNote": "All times are Doha time (GMT+3)."
   }
 }
