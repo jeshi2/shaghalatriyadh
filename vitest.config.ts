@@ -9,6 +9,14 @@ export default defineConfig({
     setupFiles: ["./vitest.setup.ts"],
     include: ["src/**/*.test.{ts,tsx}"],
     restoreMocks: true,
+    server: {
+      deps: {
+        // next-intl's client navigation imports "next/navigation", which only
+        // resolves through Next's package exports map. Inlining it lets Vite
+        // resolve the import instead of Node's bare ESM resolution.
+        inline: ["next-intl"],
+      },
+    },
   },
   resolve: {
     alias: {
