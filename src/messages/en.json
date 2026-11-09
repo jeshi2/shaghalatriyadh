@@ -4,9 +4,13 @@
     "tagline": "Trusted domestic help and home services across Qatar",
     "skipToContent": "Skip to main content",
     "language": "Language",
-    "switchLanguage": "Change language to {language}"
+    "switchLanguage": "Change language to {language}",
+    "whatsappCta": "Chat on WhatsApp",
+    "callUs": "Call us",
+    "emailUs": "Email us"
   },
   "nav": {
+    "primary": "Main menu",
     "home": "Home",
     "services": "Services",
     "howItWorks": "How it works",
@@ -14,6 +18,24 @@
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "days": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday"
+  },
+  "footer": {
+    "quickLinks": "Quick links",
+    "contact": "Contact details",
+    "openingHours": "Opening hours",
+    "closed": "Closed",
+    "serviceAreas": "Serving {areas} and the rest of Qatar.",
+    "rights": "© {year} {name}. All rights reserved.",
+    "licence": "Commercial registration: {number}"
   },
   "notFound": {
     "title": "Page not found",

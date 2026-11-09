@@ -11,7 +11,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const tNav = await getTranslations("nav");
 
   return (
-    <main className="container-content flex flex-1 flex-col gap-8 py-20">
+    <div className="container-content flex flex-1 flex-col gap-8 py-20">
       <LocaleSwitcher className="self-start" />
       <div className="flex flex-col gap-4">
         <p className="text-sm font-semibold tracking-wide text-brand-700 uppercase">
@@ -34,6 +34,6 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <Link href="/contact">{tNav("contact")}</Link>
         </li>
       </ul>
-    </main>
+    </div>
   );
 }

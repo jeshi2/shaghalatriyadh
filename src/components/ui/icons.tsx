@@ -128,3 +128,11 @@ export function WhatsAppIcon({ title, ...props }: IconProps) {
     </svg>
   );
 }
+
+export function HouseIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1v-9.5z" />
+    </Icon>
+  );
+}

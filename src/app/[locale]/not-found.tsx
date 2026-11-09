@@ -5,7 +5,7 @@ export default function LocaleNotFound() {
   const t = useTranslations("notFound");
 
   return (
-    <main className="container-content flex flex-1 flex-col items-start justify-center gap-4 py-24">
+    <div className="container-content flex flex-1 flex-col items-start justify-center gap-4 py-24">
       <p className="text-5xl font-bold text-brand-700">404</p>
       <h1 className="text-3xl font-bold">{t("title")}</h1>
       <p className="max-w-prose text-ink-500">{t("description")}</p>
@@ -15,6 +15,6 @@ export default function LocaleNotFound() {
       >
         {t("backHome")}
       </Link>
-    </main>
+    </div>
   );
 }

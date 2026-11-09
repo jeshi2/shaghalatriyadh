@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { SkipLink } from "@/components/layout/SkipLink";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getDirection, localeHtmlLang, routing } from "@/i18n/routing";
 import "../globals.css";
@@ -58,7 +61,14 @@ export default async function LocaleLayout({
       className={`${cairo.variable} h-full`}
     >
       <body className="flex min-h-full flex-col antialiased">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <SkipLink />
+          <Header />
+          <main id="main" className="flex flex-1 flex-col">
+            {children}
+          </main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
