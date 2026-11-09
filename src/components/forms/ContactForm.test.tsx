@@ -46,7 +46,9 @@ describe("ContactForm validation", () => {
     expect(
       screen.getByText("Please choose the service you need."),
     ).toBeInTheDocument();
-    expect(screen.getByText("Please describe what you need.")).toBeInTheDocument();
+    expect(
+      screen.getByText("Please describe what you need."),
+    ).toBeInTheDocument();
   });
 
   it("marks invalid fields for assistive technology", () => {
@@ -74,7 +76,9 @@ describe("ContactForm validation", () => {
     expect(screen.getByText("Your name is required.")).toBeInTheDocument();
 
     fill(/^Name$/, "Noora");
-    expect(screen.queryByText("Your name is required.")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Your name is required."),
+    ).not.toBeInTheDocument();
   });
 
   it("rejects an unusable phone number but accepts an empty one", () => {
