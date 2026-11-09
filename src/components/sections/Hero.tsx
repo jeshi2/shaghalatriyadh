@@ -9,6 +9,7 @@ export function Hero() {
   const tCommon = useTranslations("common");
   const tServices = useTranslations("services");
   const tSection = useTranslations("home.servicesSection");
+  const tWhatsApp = useTranslations("whatsapp");
 
   const trust = t.raw("trust") as string[];
 
@@ -27,7 +28,11 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <WhatsAppButton label={tCommon("whatsappCta")} size="lg" />
+            <WhatsAppButton
+              label={tCommon("whatsappCta")}
+              message={tWhatsApp("general")}
+              size="lg"
+            />
             <ButtonLink href="/services" variant="outline" size="lg">
               {t("secondaryCta")}
             </ButtonLink>

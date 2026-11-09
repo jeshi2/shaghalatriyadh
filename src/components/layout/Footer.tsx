@@ -12,6 +12,7 @@ export function Footer() {
   const tNav = useTranslations("nav");
   const tCommon = useTranslations("common");
   const tDays = useTranslations("days");
+  const tWhatsApp = useTranslations("whatsapp");
   const format = useFormatter();
 
   const hourGroups = groupOpeningHours();
@@ -29,7 +30,11 @@ export function Footer() {
           <p className="text-sm leading-relaxed text-ink-500">
             {tCommon("tagline")}
           </p>
-          <WhatsAppButton label={tCommon("whatsappCta")} size="sm" />
+          <WhatsAppButton
+            label={tCommon("whatsappCta")}
+            message={tWhatsApp("general")}
+            size="sm"
+          />
         </div>
 
         <nav aria-labelledby="footer-links">

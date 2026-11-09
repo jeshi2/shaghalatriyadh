@@ -44,6 +44,7 @@ export default async function ServiceDetailPage({
   const t = await getTranslations("services");
   const tPage = await getTranslations("servicesPage.detail");
   const tCommon = await getTranslations("common");
+  const tWhatsApp = await getTranslations("whatsapp");
 
   const Icon = service.icon;
   const highlights = t.raw(`${slug}.highlights`) as string[];
@@ -120,7 +121,13 @@ export default async function ServiceDetailPage({
                   {t(`${slug}.idealFor`)}
                 </p>
               </div>
-              <WhatsAppButton label={tCommon("whatsappCta")} fullWidth />
+              <WhatsAppButton
+                label={tCommon("whatsappCta")}
+                message={tWhatsApp("service", {
+                  service: t(`${slug}.name`),
+                })}
+                fullWidth
+              />
             </Card>
 
             <nav aria-labelledby="other-services">

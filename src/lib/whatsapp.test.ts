@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildWhatsAppUrl } from "./whatsapp";
+import { buildWhatsAppUrl, composeWhatsAppMessage } from "./whatsapp";
 
 describe("buildWhatsAppUrl", () => {
   it("builds a wa.me link from the configured number", () => {
@@ -42,5 +42,46 @@ describe("buildWhatsAppUrl", () => {
     expect(buildWhatsAppUrl({ number: "97433221100", message: "   " })).toBe(
       "https://wa.me/97433221100",
     );
+  });
+});
+
+describe("composeWhatsAppMessage", () => {
+  it("joins the provided lines with newlines", () => {
+    expect(
+      composeWhatsAppMessage([
+        "Hello, my name is Ali.",
+        "Service needed: Nanny",
+      ]),
+    ).toBe("Hello, my name is Ali.\nService needed: Nanny");
+  });
+
+  it("drops lines the visitor left empty", () => {
+    expect(
+      composeWhatsAppMessage([
+        "Hello",
+        "",
+        null,
+        undefined,
+        false,
+        "   ",
+        "Details: two children",
+      ]),
+    ).toBe("Hello\nDetails: two children");
+  });
+
+  it("trims each line", () => {
+    expect(composeWhatsAppMessage(["  Hello  ", "  Area: Doha "])).toBe(
+      "Hello\nArea: Doha",
+    );
+  });
+
+  it("survives a round trip through the URL builder", () => {
+    const message = composeWhatsAppMessage([
+      "مرحبًا، أنا نورة.",
+      "الخدمة المطلوبة: جليسة أطفال",
+    ]);
+    const url = buildWhatsAppUrl({ number: "97433221100", message });
+
+    expect(decodeURIComponent(url.split("?text=")[1])).toBe(message);
   });
 });

@@ -357,5 +357,50 @@
     "addressTitle": "العنوان",
     "hoursTitle": "ساعات العمل",
     "hoursNote": "جميع الأوقات بتوقيت الدوحة (GMT+3)."
+  },
+  "whatsapp": {
+    "general": "مرحبًا، أرغب في الاستفسار عن خدماتكم المنزلية في قطر.",
+    "service": "مرحبًا، أرغب في الاستفسار عن خدمة: {service}.",
+    "floatingLabel": "تواصل معنا عبر واتساب",
+    "form": {
+      "greeting": "مرحبًا، أنا {name}.",
+      "serviceLine": "الخدمة المطلوبة: {service}",
+      "areaLine": "المنطقة: {area}",
+      "phoneLine": "رقم التواصل: {phone}",
+      "detailsLine": "التفاصيل: {details}"
+    }
+  },
+  "contactForm": {
+    "title": "أرسل طلبك عبر واتساب",
+    "description": "املأ الحقول التالية، وسيفتح واتساب برسالة جاهزة يمكنك مراجعتها قبل الإرسال.",
+    "nameLabel": "الاسم",
+    "namePlaceholder": "اسمك الكامل",
+    "phoneLabel": "رقم الهاتف (اختياري)",
+    "phonePlaceholder": "+974 0000 0000",
+    "serviceLabel": "الخدمة المطلوبة",
+    "servicePlaceholder": "اختر الخدمة",
+    "serviceOther": "خدمة أخرى",
+    "areaLabel": "المنطقة (اختياري)",
+    "areaPlaceholder": "مثال: الدوحة، اللؤلؤة",
+    "detailsLabel": "تفاصيل الطلب",
+    "detailsPlaceholder": "عدد أفراد الأسرة، عدد الساعات أو أيام الدوام، وأي ملاحظات مهمة.",
+    "optional": "اختياري",
+    "submit": "متابعة على واتساب",
+    "submitting": "جارٍ تجهيز الرسالة…",
+    "success": "تم فتح واتساب برسالتك. راجع الرسالة ثم اضغط إرسال.",
+    "successFallback": "إذا لم يفتح واتساب تلقائيًا، اضغط هنا لفتح المحادثة.",
+    "errorSummary": "يرجى تصحيح الحقول التالية قبل المتابعة.",
+    "privacyNote": "لا نحتفظ بأي بيانات على هذا الموقع؛ تُرسل رسالتك عبر تطبيق واتساب مباشرة.",
+    "errors": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameTooShort": "اكتب الاسم بحرفين على الأقل.",
+      "nameTooLong": "الاسم طويل جدًا.",
+      "serviceRequired": "اختر الخدمة المطلوبة.",
+      "phoneInvalid": "أدخل رقم هاتف صحيحًا أو اترك الحقل فارغًا.",
+      "areaTooLong": "اسم المنطقة طويل جدًا.",
+      "detailsRequired": "اكتب تفاصيل الطلب.",
+      "detailsTooShort": "أضف تفاصيل أكثر (10 أحرف على الأقل).",
+      "detailsTooLong": "التفاصيل طويلة جدًا."
+    }
   }
 }

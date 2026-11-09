@@ -9,6 +9,7 @@ import { mainNav } from "@/config/navigation";
 export function Header() {
   const t = useTranslations("nav");
   const tCommon = useTranslations("common");
+  const tWhatsApp = useTranslations("whatsapp");
 
   return (
     <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/95 backdrop-blur">
@@ -29,6 +30,7 @@ export function Header() {
           <LocaleSwitcher className="hidden sm:flex" />
           <WhatsAppButton
             label={tCommon("whatsappCta")}
+            message={tWhatsApp("general")}
             size="sm"
             className="hidden sm:inline-flex"
           />

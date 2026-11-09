@@ -22,3 +22,17 @@ export function buildWhatsAppUrl({
 
   return text ? `${url}?text=${encodeURIComponent(text)}` : url;
 }
+
+/**
+ * Joins the lines of an enquiry into one WhatsApp message, dropping the
+ * optional lines the visitor left empty. Kept separate from the components so
+ * the message layout is testable on its own.
+ */
+export function composeWhatsAppMessage(
+  lines: readonly (string | null | undefined | false)[],
+): string {
+  return lines
+    .filter((line): line is string => Boolean(line && line.trim()))
+    .map((line) => line.trim())
+    .join("\n");
+}

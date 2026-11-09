@@ -357,5 +357,50 @@
     "addressTitle": "Address",
     "hoursTitle": "Opening hours",
     "hoursNote": "All times are Doha time (GMT+3)."
+  },
+  "whatsapp": {
+    "general": "Hello, I would like to ask about your domestic services in Qatar.",
+    "service": "Hello, I would like to ask about this service: {service}.",
+    "floatingLabel": "Contact us on WhatsApp",
+    "form": {
+      "greeting": "Hello, my name is {name}.",
+      "serviceLine": "Service needed: {service}",
+      "areaLine": "Area: {area}",
+      "phoneLine": "Contact number: {phone}",
+      "detailsLine": "Details: {details}"
+    }
+  },
+  "contactForm": {
+    "title": "Send your request on WhatsApp",
+    "description": "Fill in the fields below and WhatsApp opens with a ready message you can review before sending.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your full name",
+    "phoneLabel": "Phone number (optional)",
+    "phonePlaceholder": "+974 0000 0000",
+    "serviceLabel": "Service needed",
+    "servicePlaceholder": "Choose a service",
+    "serviceOther": "Another service",
+    "areaLabel": "Area (optional)",
+    "areaPlaceholder": "For example: Doha, The Pearl",
+    "detailsLabel": "Request details",
+    "detailsPlaceholder": "Household size, hours or working days, and anything else we should know.",
+    "optional": "optional",
+    "submit": "Continue on WhatsApp",
+    "submitting": "Preparing your message…",
+    "success": "WhatsApp opened with your message. Review it and press send.",
+    "successFallback": "If WhatsApp did not open automatically, use this link.",
+    "errorSummary": "Please correct the following fields before continuing.",
+    "privacyNote": "Nothing is stored on this website; your message is sent through the WhatsApp app itself.",
+    "errors": {
+      "nameRequired": "Your name is required.",
+      "nameTooShort": "Please enter at least two characters.",
+      "nameTooLong": "That name is too long.",
+      "serviceRequired": "Please choose the service you need.",
+      "phoneInvalid": "Enter a valid phone number or leave the field empty.",
+      "areaTooLong": "That area name is too long.",
+      "detailsRequired": "Please describe what you need.",
+      "detailsTooShort": "Please add a little more detail (at least 10 characters).",
+      "detailsTooLong": "Those details are too long."
+    }
   }
 }

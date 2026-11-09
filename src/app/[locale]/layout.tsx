@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { FloatingWhatsAppButton } from "@/components/whatsapp/FloatingWhatsAppButton";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getDirection, localeHtmlLang, routing } from "@/i18n/routing";
 import "../globals.css";
@@ -68,6 +69,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer />
+          <FloatingWhatsAppButton />
         </NextIntlClientProvider>
       </body>
     </html>

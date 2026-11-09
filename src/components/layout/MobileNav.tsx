@@ -18,6 +18,7 @@ import { usePathname } from "@/i18n/navigation";
 export function MobileNav() {
   const t = useTranslations("nav");
   const tCommon = useTranslations("common");
+  const tWhatsApp = useTranslations("whatsapp");
   const panelId = useId();
   const pathname = usePathname();
 
@@ -81,7 +82,11 @@ export function MobileNav() {
             </ul>
           </nav>
 
-          <WhatsAppButton label={tCommon("whatsappCta")} fullWidth />
+          <WhatsAppButton
+            label={tCommon("whatsappCta")}
+            message={tWhatsApp("general")}
+            fullWidth
+          />
           <LocaleSwitcher />
         </div>
       </div>

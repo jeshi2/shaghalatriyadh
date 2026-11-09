@@ -6,6 +6,7 @@ import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 export function FinalCta() {
   const t = useTranslations("home.finalCta");
   const tCommon = useTranslations("common");
+  const tWhatsApp = useTranslations("whatsapp");
 
   return (
     <Section tone="brand" aria-labelledby="final-cta-title">
@@ -17,7 +18,11 @@ export function FinalCta() {
           tone="inverted"
         />
         <div className="flex flex-wrap gap-3">
-          <WhatsAppButton label={tCommon("whatsappCta")} size="lg" />
+          <WhatsAppButton
+            label={tCommon("whatsappCta")}
+            message={tWhatsApp("general")}
+            size="lg"
+          />
           <ButtonLink
             href="/contact"
             size="lg"

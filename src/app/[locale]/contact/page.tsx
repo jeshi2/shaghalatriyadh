@@ -5,6 +5,7 @@ import { ExternalButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { business } from "@/config/business";
 
@@ -25,6 +26,8 @@ export default async function ContactPage({
 
   const t = await getTranslations("contactPage");
   const tCommon = await getTranslations("common");
+  const tWhatsApp = await getTranslations("whatsapp");
+  const tForm = await getTranslations("contactForm");
 
   return (
     <Section aria-labelledby="contact-title">
@@ -50,6 +53,7 @@ export default async function ContactPage({
           </p>
           <WhatsAppButton
             label={tCommon("whatsappCta")}
+            message={tWhatsApp("general")}
             fullWidth
             className="mt-auto"
           />
@@ -123,6 +127,16 @@ export default async function ContactPage({
           <OpeningHoursList />
           <p className="text-xs text-ink-400">{t("hoursNote")}</p>
         </Card>
+      </div>
+
+      <div className="mt-16 max-w-2xl">
+        <h2 className="text-2xl font-bold">{tForm("title")}</h2>
+        <p className="mt-3 leading-relaxed text-ink-600">
+          {tForm("description")}
+        </p>
+        <div className="mt-8">
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );
