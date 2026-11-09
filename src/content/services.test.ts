@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
 import ar from "@/messages/ar.json";
 import en from "@/messages/en.json";
-import { featuredServices, getService, services, serviceSlugs } from "./services";
+import {
+  featuredServices,
+  getService,
+  services,
+  serviceSlugs,
+} from "./services";
 
 const dictionaries = [
   { locale: "ar", messages: ar.services as Record<string, unknown> },
@@ -43,9 +48,10 @@ describe("service catalogue", () => {
   it("does not carry copy for services that no longer exist", () => {
     for (const { locale, messages } of dictionaries) {
       for (const key of Object.keys(messages)) {
-        expect(serviceSlugs, `${locale} has orphaned copy for ${key}`).toContain(
-          key,
-        );
+        expect(
+          serviceSlugs,
+          `${locale} has orphaned copy for ${key}`,
+        ).toContain(key);
       }
     }
   });
