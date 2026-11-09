@@ -4,23 +4,32 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { services } from "@/content/services";
+import { requireLocale } from "@/i18n/locale";
+import { buildPageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/services">): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   const t = await getTranslations({ locale, namespace: "servicesPage" });
 
-  return {
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+
+  return buildPageMetadata({
+    locale,
+    path: "/services",
     title: t("metaTitle"),
     description: t("metaDescription"),
-  };
+    siteName: tCommon("brandName"),
+  });
 }
 
 export default async function ServicesPage({
   params,
 }: PageProps<"/[locale]/services">) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   setRequestLocale(locale);
 
   const t = await getTranslations("servicesPage");

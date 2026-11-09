@@ -5,22 +5,34 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { Card } from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon, ClockIcon } from "@/components/ui/icons";
+import { requireLocale } from "@/i18n/locale";
+import { buildPageMetadata } from "@/lib/metadata";
 
 type Step = { title: string; description: string; need: string };
 
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/how-it-works">): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   const t = await getTranslations({ locale, namespace: "howItWorksPage" });
 
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+
+  return buildPageMetadata({
+    locale,
+    path: "/how-it-works",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    siteName: tCommon("brandName"),
+  });
 }
 
 export default async function HowItWorksPage({
   params,
 }: PageProps<"/[locale]/how-it-works">) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   setRequestLocale(locale);
 
   const t = await getTranslations("howItWorksPage");

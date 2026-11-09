@@ -7,7 +7,11 @@ import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { FloatingWhatsAppButton } from "@/components/whatsapp/FloatingWhatsAppButton";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { site } from "@/config/site";
 import { getDirection, localeHtmlLang, routing } from "@/i18n/routing";
+import { localeUrl, ogImageUrl } from "@/lib/metadata";
+import { buildLocalBusiness, buildWebSite } from "@/lib/structuredData";
 import "../globals.css";
 
 /**
@@ -34,8 +38,24 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "common" });
 
   return {
-    title: t("brandName"),
+    metadataBase: new URL(site.url),
+    // Pages set their own title; this appends the brand to each one.
+    title: {
+      default: `${t("brandName")} — ${t("tagline")}`,
+      template: `%s | ${t("brandName")}`,
+    },
     description: t("tagline"),
+    robots: {
+      index: true,
+      follow: true,
+    },
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? {
+          verification: {
+            google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   };
 }
 
@@ -55,6 +75,9 @@ export default async function LocaleLayout({
   // translation APIs without reading request headers.
   setRequestLocale(locale);
 
+  const t = await getTranslations("common");
+  const homeUrl = localeUrl(locale, "/");
+
   return (
     <html
       lang={localeHtmlLang[locale]}
@@ -70,6 +93,22 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <FloatingWhatsAppButton />
+          {/* Site-wide structured data: who the business is and where. */}
+          <JsonLd
+            data={buildLocalBusiness({
+              name: t("brandName"),
+              description: t("tagline"),
+              url: homeUrl,
+              image: ogImageUrl(locale),
+            })}
+          />
+          <JsonLd
+            data={buildWebSite({
+              name: t("brandName"),
+              url: homeUrl,
+              locale: localeHtmlLang[locale],
+            })}
+          />
         </NextIntlClientProvider>
       </body>
     </html>

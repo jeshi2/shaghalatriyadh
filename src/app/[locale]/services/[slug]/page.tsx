@@ -8,7 +8,11 @@ import { CheckIcon } from "@/components/ui/icons";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { getService, services, serviceSlugs } from "@/content/services";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Link } from "@/i18n/navigation";
+import { requireLocale } from "@/i18n/locale";
+import { buildPageMetadata, localeUrl } from "@/lib/metadata";
+import { buildBreadcrumbs, buildService } from "@/lib/structuredData";
 
 /** One static page per service, per locale. */
 export function generateStaticParams() {
@@ -18,21 +22,27 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/services/[slug]">): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { locale: localeParam, slug } = await params;
+  const locale = requireLocale(localeParam);
   if (!getService(slug)) return {};
 
   const t = await getTranslations({ locale, namespace: "services" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path: `/services/${slug}`,
     title: t(`${slug}.name`),
     description: t(`${slug}.summary`),
-  };
+    siteName: tCommon("brandName"),
+  });
 }
 
 export default async function ServiceDetailPage({
   params,
 }: PageProps<"/[locale]/services/[slug]">) {
-  const { locale, slug } = await params;
+  const { locale: localeParam, slug } = await params;
+  const locale = requireLocale(localeParam);
   const service = getService(slug);
 
   if (!service) {
@@ -45,6 +55,10 @@ export default async function ServiceDetailPage({
   const tPage = await getTranslations("servicesPage.detail");
   const tCommon = await getTranslations("common");
   const tWhatsApp = await getTranslations("whatsapp");
+
+  const tNav = await getTranslations("nav");
+  const tServicesPage = await getTranslations("servicesPage");
+  const pageUrl = localeUrl(locale, `/services/${slug}`);
 
   const Icon = service.icon;
   const highlights = t.raw(`${slug}.highlights`) as string[];
@@ -156,6 +170,27 @@ export default async function ServiceDetailPage({
       </Section>
 
       <FinalCta />
+
+      <JsonLd
+        data={buildService({
+          name: t(`${slug}.name`),
+          description: t(`${slug}.description`),
+          serviceType: t(`${slug}.name`),
+          url: pageUrl,
+          providerName: tCommon("brandName"),
+          providerUrl: localeUrl(locale, "/"),
+        })}
+      />
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: tNav("home"), url: localeUrl(locale, "/") },
+          {
+            name: tServicesPage("eyebrow"),
+            url: localeUrl(locale, "/services"),
+          },
+          { name: t(`${slug}.name`), url: pageUrl },
+        ])}
+      />
     </>
   );
 }

@@ -8,20 +8,32 @@ import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { business } from "@/config/business";
+import { requireLocale } from "@/i18n/locale";
+import { buildPageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/contact">): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   const t = await getTranslations({ locale, namespace: "contactPage" });
 
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+
+  return buildPageMetadata({
+    locale,
+    path: "/contact",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    siteName: tCommon("brandName"),
+  });
 }
 
 export default async function ContactPage({
   params,
 }: PageProps<"/[locale]/contact">) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   setRequestLocale(locale);
 
   const t = await getTranslations("contactPage");

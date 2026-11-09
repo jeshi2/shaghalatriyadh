@@ -11,6 +11,8 @@ import {
   UsersIcon,
 } from "@/components/ui/icons";
 import { business } from "@/config/business";
+import { requireLocale } from "@/i18n/locale";
+import { buildPageMetadata } from "@/lib/metadata";
 
 const values = [
   { key: "clarity", icon: DocumentIcon },
@@ -22,16 +24,26 @@ const values = [
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/about">): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   const t = await getTranslations({ locale, namespace: "aboutPage" });
 
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+
+  return buildPageMetadata({
+    locale,
+    path: "/about",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    siteName: tCommon("brandName"),
+  });
 }
 
 export default async function AboutPage({
   params,
 }: PageProps<"/[locale]/about">) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = requireLocale(localeParam);
   setRequestLocale(locale);
 
   const t = await getTranslations("aboutPage");
