@@ -23,59 +23,57 @@ export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 72,
-          background: "linear-gradient(135deg, #8a1538 0%, #4d0b22 100%)",
-          color: "white",
-          fontFamily: "sans-serif",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 26,
-              letterSpacing: 6,
-              textTransform: "uppercase",
-              color: "#ead7b8",
-            }}
-          >
-            {`${business.address.city} · ${business.address.country}`}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 76,
-              fontWeight: 700,
-              lineHeight: 1.15,
-            }}
-          >
-            {business.legalName}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 34,
-              color: "#f5c6d3",
-              maxWidth: 900,
-            }}
-          >
-            {"Housemaids, cleaning, childcare, elderly care and home cooking"}
-          </div>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: 72,
+        background: "linear-gradient(135deg, #8a1538 0%, #4d0b22 100%)",
+        color: "white",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 26,
+            letterSpacing: 6,
+            textTransform: "uppercase",
+            color: "#ead7b8",
+          }}
+        >
+          {`${business.address.city} · ${business.address.country}`}
         </div>
-
-        <div style={{ display: "flex", fontSize: 26, color: "#f5ecdc" }}>
-          {"WhatsApp enquiries · Arabic & English"}
+        <div
+          style={{
+            display: "flex",
+            fontSize: 76,
+            fontWeight: 700,
+            lineHeight: 1.15,
+          }}
+        >
+          {business.legalName}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 34,
+            color: "#f5c6d3",
+            maxWidth: 900,
+          }}
+        >
+          {"Housemaids, cleaning, childcare, elderly care and home cooking"}
         </div>
       </div>
-    ),
+
+      <div style={{ display: "flex", fontSize: 26, color: "#f5ecdc" }}>
+        {"WhatsApp enquiries · Arabic & English"}
+      </div>
+    </div>,
     size,
   );
 }
