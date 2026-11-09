@@ -4,11 +4,15 @@ import en from "./en.json";
 
 type Messages = Record<string, unknown>;
 
-/** Flattens a nested message object into dot-separated keys. */
+/**
+ * Flattens a nested message object into dot-separated keys. Arrays are walked
+ * by index, so a list with a different number of items in one locale shows up
+ * as a missing key rather than passing silently.
+ */
 function flatten(messages: Messages, prefix = ""): string[] {
   return Object.entries(messages).flatMap(([key, value]) => {
     const path = prefix ? `${prefix}.${key}` : key;
-    return value !== null && typeof value === "object" && !Array.isArray(value)
+    return value !== null && typeof value === "object"
       ? flatten(value as Messages, path)
       : [path];
   });

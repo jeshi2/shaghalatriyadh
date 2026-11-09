@@ -136,3 +136,90 @@ export function HouseIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function SparkleIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z" />
+      <path d="M18 16l.8 2.2L21 19l-2.2.8L18 22l-.8-2.2L15 19l2.2-.8z" />
+    </Icon>
+  );
+}
+
+export function BroomIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14 3l-7 7" />
+      <path d="M9.5 8.5l6 6" />
+      <path d="M12.5 11.5L7 17l-3 4 4-3 5.5-5.5" />
+      <path d="M15 14l5-5 1 1-5 5z" />
+    </Icon>
+  );
+}
+
+export function BabyIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <circle cx="12" cy="7" r="3.5" />
+      <path d="M10.5 6.5h.01M13.5 6.5h.01" />
+      <path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+    </Icon>
+  );
+}
+
+export function HeartHandsIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 9.5l-.9-.9a2 2 0 112.8-2.8l.1.1.1-.1a2 2 0 112.8 2.8l-2.9 2.9z" />
+      <path d="M4 13l3-1 3 2h3a1.5 1.5 0 010 3H9" />
+      <path d="M4 12.5V20h4l5 1 7-3.5V16" />
+    </Icon>
+  );
+}
+
+export function ChefHatIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M7 12.5A3.5 3.5 0 019 6a3.2 3.2 0 016 0 3.5 3.5 0 012 6.5V15H7z" />
+      <path d="M7 18h10v2H7z" />
+    </Icon>
+  );
+}
+
+export function UsersIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5" />
+      <path d="M16 5.5a3 3 0 010 5.8" />
+      <path d="M18 14.8c2 .8 3 2.3 3 4.2" />
+    </Icon>
+  );
+}
+
+export function TagIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12.5 3H20a1 1 0 011 1v7.5L11 21.5 2.5 13z" />
+      <circle cx="16.5" cy="7.5" r="1.5" />
+    </Icon>
+  );
+}
+
+export function ChatIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M20 12a7.5 7.5 0 01-11 6.7L4.5 20l1.3-4A7.5 7.5 0 1120 12z" />
+    </Icon>
+  );
+}
+
+export function DocumentIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14 3H7a1 1 0 00-1 1v16a1 1 0 001 1h10a1 1 0 001-1V7z" />
+      <path d="M14 3v4h4" />
+      <path d="M9 13h6M9 17h4" />
+    </Icon>
+  );
+}

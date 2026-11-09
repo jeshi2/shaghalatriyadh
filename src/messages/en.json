@@ -41,5 +41,211 @@
     "title": "Page not found",
     "description": "Sorry, the page you are looking for is unavailable or has moved.",
     "backHome": "Back to the homepage"
+  },
+  "services": {
+    "full-time-maid": {
+      "name": "Full-time housemaid",
+      "summary": "A live-in housemaid for daily household work, with the contract and visa handled end to end.",
+      "highlights": [
+        "Profile and interview before you choose",
+        "Contract under Qatar labour law",
+        "Follow-up after she starts"
+      ],
+      "description": "We help families in Qatar choose a live-in housemaid who fits the size of the home and the household routine. You receive candidate profiles with experience and spoken languages, we arrange the interview, and we then handle the contract, visa and medical steps so she starts work properly documented.",
+      "includes": [
+        "Daily cleaning and tidying",
+        "Laundry and ironing",
+        "Help with meal preparation",
+        "Childcare under the family's supervision"
+      ],
+      "idealFor": "Families who need continuous daily help at home."
+    },
+    "part-time-cleaning": {
+      "name": "Part-time cleaning",
+      "summary": "Cleaners by the hour or on a weekly schedule, with no long-term commitment.",
+      "highlights": [
+        "Flexible hourly or weekly booking",
+        "Organised, trained team",
+        "Cleaning supplies on request"
+      ],
+      "description": "Suited to apartments and villas that need regular cleaning without a live-in maid. You set the hours and days, and we send the same team wherever possible so they learn your home and keep the standard consistent on every visit.",
+      "includes": [
+        "Bedrooms and living areas",
+        "Kitchen and bathrooms",
+        "Floors and interior windows",
+        "General tidying"
+      ],
+      "idealFor": "Apartments, smaller households and anyone who only needs periodic cleaning."
+    },
+    "deep-cleaning": {
+      "name": "Deep cleaning",
+      "summary": "A thorough clean before moving in or after renovation, using specialist equipment.",
+      "highlights": [
+        "Kitchen and bathrooms cleaned in depth",
+        "Steam cleaning for sofas and carpets",
+        "Ideal before or after a move"
+      ],
+      "description": "A top-to-bottom clean that reaches what day-to-day cleaning does not: inside cupboards, behind appliances, air-conditioning vents, kitchen grease, and steam cleaning for upholstery. The team completes it in a single visit against a clear checklist.",
+      "includes": [
+        "Degreasing the kitchen",
+        "Descaling bathrooms",
+        "Steam cleaning upholstery and carpets",
+        "Windows and AC vents"
+      ],
+      "idealFor": "New homes, property handovers and post-maintenance cleaning."
+    },
+    "nanny": {
+      "name": "Nanny and childcare",
+      "summary": "Experienced nannies who care for children and keep their daily routine.",
+      "highlights": [
+        "Documented experience with children",
+        "Full-time or part-time",
+        "Keeps the daily routine"
+      ],
+      "description": "We shortlist nannies with practical experience across age groups, from infants to school age. You see each candidate's experience and spoken languages and can interview her yourself before deciding whether she suits your family.",
+      "includes": [
+        "Daily care and feeding",
+        "Sleep and personal hygiene routines",
+        "Play and simple learning activities",
+        "School drop-off and pick-up if agreed"
+      ],
+      "idealFor": "Working families who need dependable childcare."
+    },
+    "elderly-care": {
+      "name": "Elderly care",
+      "summary": "Companionship and in-home support for older family members, with respect for your privacy.",
+      "highlights": [
+        "Daily companionship and assistance",
+        "Medication reminders",
+        "Arabic or English speaking"
+      ],
+      "description": "In-home support that helps older people stay safely at home: help with mobility and personal hygiene, medication reminders, suitable meals and daily companionship. This is non-medical care and we say so before any agreement; if the situation needs qualified nursing, we tell you.",
+      "includes": [
+        "Help with mobility and personal hygiene",
+        "Medication reminders",
+        "Preparing suitable meals",
+        "Daily companionship and check-ins"
+      ],
+      "idealFor": "Families arranging in-home care for their parents."
+    },
+    "cooking": {
+      "name": "Home cooking",
+      "summary": "Daily home-cooked meals prepared the way your family likes them.",
+      "highlights": [
+        "Arabic, Asian and international dishes",
+        "Batch cooking for the week",
+        "Allergies and diets respected"
+      ],
+      "description": "A cook or kitchen-experienced helper who prepares daily meals to your family's taste, including batch cooking for several days at a time. Food allergies, special diets and halal requirements are taken into account.",
+      "includes": [
+        "Daily meal preparation",
+        "Grocery shopping if agreed",
+        "Batch cooking for several days",
+        "Kitchen clean-up afterwards"
+      ],
+      "idealFor": "Busy households and anyone who wants regular home-cooked meals."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Domestic services in Qatar",
+      "title": "Trusted domestic help and home services in Doha and across Qatar",
+      "subtitle": "From a full-time housemaid to cleaning by the hour, childcare or elderly care. We shortlist suitable candidates, handle the contract and paperwork, and it all starts with one WhatsApp message.",
+      "secondaryCta": "Browse services",
+      "trust": [
+        "Profiles and interviews before you choose",
+        "Proper contracts and paperwork",
+        "Support in Arabic and English"
+      ]
+    },
+    "valueProps": {
+      "eyebrow": "Why us",
+      "title": "A clear process from the first message to the first day",
+      "description": "We keep it simple: understand what your household needs, shortlist the people who fit, and stay available after the service starts.",
+      "items": {
+        "vetted": {
+          "title": "Candidates we have screened",
+          "description": "We check experience and documents, and tell you which languages each candidate speaks before the interview."
+        },
+        "legal": {
+          "title": "Proper paperwork",
+          "description": "Contracts, visas and medical checks in line with the regulations in force in Qatar."
+        },
+        "response": {
+          "title": "Fast WhatsApp replies",
+          "description": "You hear back within working hours, in Arabic or English, from someone who has read your request."
+        },
+        "pricing": {
+          "title": "Clear pricing",
+          "description": "We explain the cost and what it covers before you commit, with no fees that appear later."
+        }
+      }
+    },
+    "servicesSection": {
+      "eyebrow": "Our services",
+      "title": "Pick the service your household needs",
+      "description": "Every service has a page explaining what it covers and who it suits, and you can ask us about any detail on WhatsApp.",
+      "cardCta": "Service details",
+      "allServices": "All services"
+    },
+    "howItWorks": {
+      "eyebrow": "How it works",
+      "title": "Four steps from first contact to the first day",
+      "description": "No long forms and no unnecessary visits. The steps are clear and you stay in control at every stage.",
+      "steps": [
+        {
+          "title": "Send us your request",
+          "description": "Message us on WhatsApp with the service you need, your area, and the hours or days you have in mind."
+        },
+        {
+          "title": "We explain the options",
+          "description": "A few short questions about your household, then the available options and what each one costs."
+        },
+        {
+          "title": "You choose",
+          "description": "We share the profiles that fit and you interview the candidates before committing to anything."
+        },
+        {
+          "title": "We handle the paperwork",
+          "description": "We complete the contract and the required formalities, and follow up once work has started."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions we are asked often",
+      "description": "If your question is not answered here, send it on WhatsApp and we will go through the details with you.",
+      "items": [
+        {
+          "question": "What is the difference between a full-time maid and part-time cleaning?",
+          "answer": "A full-time maid lives in the home and handles daily work under a long-term contract. Part-time cleaning is booked as individual visits when you need them, with no long commitment."
+        },
+        {
+          "question": "Do you handle the contract and the visa?",
+          "answer": "Yes. For full-time placements we handle the contract, visa and medical steps in line with the regulations in force in Qatar, and we tell you upfront which documents we need from you."
+        },
+        {
+          "question": "How long does it take before work starts?",
+          "answer": "It depends on the service, candidate availability and the official formalities. Send us your request and we will give you a realistic timeline for your case."
+        },
+        {
+          "question": "Can the worker be replaced if she is not the right fit?",
+          "answer": "Yes. The replacement policy and its conditions are set out in the contract before signing, so both sides know where they stand."
+        },
+        {
+          "question": "Which areas do you cover?",
+          "answer": "We serve Doha and the surrounding areas across Qatar. Tell us your area and we will confirm whether it is covered."
+        },
+        {
+          "question": "How does pricing and payment work?",
+          "answer": "We explain the cost and what it covers before you agree to anything. Prices depend on the service and the hours involved, and you can ask for a quote on WhatsApp."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Tell us what your household needs",
+      "description": "One message is enough for us to understand your request and explain the options and the cost.",
+      "secondaryCta": "Contact page"
+    }
   }
 }
