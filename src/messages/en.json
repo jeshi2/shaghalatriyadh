@@ -1,6 +1,23 @@
 {
   "common": {
     "brandName": "Qatar Home Services",
-    "tagline": "Trusted domestic help and home services in Qatar"
+    "tagline": "Trusted domestic help and home services across Qatar",
+    "skipToContent": "Skip to main content",
+    "language": "Language",
+    "switchLanguage": "Change language to {language}"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "howItWorks": "How it works",
+    "about": "About us",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Sorry, the page you are looking for is unavailable or has moved.",
+    "backHome": "Back to the homepage"
   }
 }
