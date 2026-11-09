@@ -247,5 +247,20 @@
       "description": "One message is enough for us to understand your request and explain the options and the cost.",
       "secondaryCta": "Contact page"
     }
+  },
+  "servicesPage": {
+    "eyebrow": "Services",
+    "title": "Domestic services for every home in Qatar",
+    "description": "Open a service to see what it covers and who it suits, or send us your details and we will recommend the right fit.",
+    "metaTitle": "Domestic services",
+    "metaDescription": "Full-time housemaids, part-time cleaning, deep cleaning, nannies, elderly care and home cooking in Doha and across Qatar.",
+    "detail": {
+      "includesTitle": "What the service covers",
+      "highlightsTitle": "Good to know",
+      "idealForTitle": "Suited to",
+      "otherServices": "Other services",
+      "backToServices": "Back to services",
+      "askAbout": "Ask about this service"
+    }
   }
 }
