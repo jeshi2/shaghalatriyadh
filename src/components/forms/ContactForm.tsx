@@ -103,7 +103,7 @@ export function ContactForm() {
     errors[field] ? errorId(field) : undefined;
 
   const inputClasses =
-    "w-full rounded-card border border-ink-300 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-400 aria-[invalid=true]:border-brand-700";
+    "w-full rounded-card border border-ink-300 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-500 aria-[invalid=true]:border-brand-700";
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
@@ -268,7 +268,7 @@ export function ContactForm() {
               href={sentUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-whatsapp-dark underline"
+              className="font-semibold text-brand-700 underline"
             >
               {t("successFallback")}
             </a>

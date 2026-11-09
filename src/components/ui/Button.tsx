@@ -8,7 +8,7 @@ export type ButtonVariant =
 export type ButtonSize = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-pill font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-pill text-center font-semibold whitespace-nowrap transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-brand-700 text-white hover:bg-brand-800 active:bg-brand-900",
@@ -16,8 +16,10 @@ const variants: Record<ButtonVariant, string> = {
   outline:
     "border border-brand-700 bg-transparent text-brand-700 hover:bg-brand-50 active:bg-brand-100",
   ghost: "bg-transparent text-ink-700 hover:bg-ink-100 active:bg-ink-200",
+  // Dark text on WhatsApp green: white on #25d366 is only 1.98:1, while
+  // ink-900 on the same green measures 9.0:1.
   whatsapp:
-    "bg-whatsapp text-white hover:bg-whatsapp-dark active:bg-whatsapp-dark",
+    "bg-whatsapp text-ink-900 hover:bg-whatsapp-dark active:bg-whatsapp-dark",
 };
 
 const sizes: Record<ButtonSize, string> = {

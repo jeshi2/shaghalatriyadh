@@ -16,7 +16,7 @@ export function FloatingWhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t("floatingLabel")}
-      className="fixed bottom-5 end-5 z-50 flex size-14 items-center justify-center rounded-pill bg-whatsapp text-3xl text-white shadow-lifted transition-colors hover:bg-whatsapp-dark print:hidden"
+      className="fixed bottom-5 end-5 z-50 flex size-14 items-center justify-center rounded-pill bg-whatsapp text-3xl text-ink-900 shadow-lifted transition-colors hover:bg-whatsapp-dark print:hidden"
     >
       <WhatsAppIcon />
     </a>

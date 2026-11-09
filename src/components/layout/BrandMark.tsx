@@ -25,7 +25,7 @@ export function BrandMark({ name, tagline }: BrandMarkProps) {
       <span className="flex flex-col leading-tight">
         <span className="text-base font-bold text-ink-900">{name}</span>
         {tagline ? (
-          <span className="hidden text-xs text-ink-500 sm:block">
+          <span className="hidden text-xs text-ink-500 xl:block">
             {tagline}
           </span>
         ) : null}

@@ -4,7 +4,12 @@ import { OpeningHoursList } from "@/components/layout/OpeningHoursList";
 import { ExternalButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import {
+  MailIcon,
+  PhoneIcon,
+  PinIcon,
+  WhatsAppIcon,
+} from "@/components/ui/icons";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { business } from "@/config/business";
@@ -54,10 +59,10 @@ export default async function ContactPage({
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
         <Card>
           <span
-            className="flex size-12 items-center justify-center rounded-card bg-whatsapp/10 text-2xl text-whatsapp-dark"
+            className="flex size-12 items-center justify-center rounded-card bg-whatsapp/15 text-2xl text-ink-900"
             aria-hidden="true"
           >
-            <PhoneIcon />
+            <WhatsAppIcon />
           </span>
           <h2 className="text-lg font-bold">{t("whatsappTitle")}</h2>
           <p className="text-sm leading-relaxed text-ink-500">
@@ -137,7 +142,7 @@ export default async function ContactPage({
         <Card>
           <h2 className="text-lg font-bold">{t("hoursTitle")}</h2>
           <OpeningHoursList />
-          <p className="text-xs text-ink-400">{t("hoursNote")}</p>
+          <p className="text-xs text-ink-500">{t("hoursNote")}</p>
         </Card>
       </div>
 

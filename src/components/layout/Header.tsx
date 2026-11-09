@@ -16,7 +16,7 @@ export function Header() {
       <div className="container-content flex h-16 items-center gap-4 lg:h-20">
         <BrandMark name={tCommon("brandName")} tagline={tCommon("tagline")} />
 
-        <nav aria-label={t("primary")} className="hidden lg:block">
+        <nav aria-label={t("primary")} className="hidden xl:block">
           <ul className="flex items-center gap-6">
             {mainNav.map((item) => (
               <li key={item.href}>

@@ -47,7 +47,7 @@ export function MobileNav() {
   }, [isOpen]);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <Button
         variant="ghost"
         size="sm"

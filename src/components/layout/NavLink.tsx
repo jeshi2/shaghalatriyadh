@@ -33,7 +33,7 @@ export function NavLink({
       onClick={onNavigate}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "rounded-sm px-1 py-2 text-base font-medium transition-colors",
+        "rounded-sm px-1 py-2 text-base font-medium whitespace-nowrap transition-colors",
         isActive
           ? "text-brand-700 underline decoration-2 underline-offset-8"
           : "text-ink-600 hover:text-brand-700",
