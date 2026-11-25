@@ -129,11 +129,32 @@ export function WhatsAppIcon({ title, ...props }: IconProps) {
   );
 }
 
-export function HouseIcon(props: IconProps) {
+/**
+ * The brand mark: a Najdi mud-brick house — triangular wall vents over an
+ * arched door — drawn on the same 24x24 grid as the icons above.
+ *
+ * It is a filled shape rather than a stroked one, so it keeps its weight at
+ * favicon size, and it is symmetric, so it needs no mirroring in RTL. The
+ * source files and raster exports live in public/brand/.
+ */
+export function BrandIcon({ title, ...props }: IconProps) {
   return (
-    <Icon {...props}>
-      <path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1v-9.5z" />
-    </Icon>
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      width="1em"
+      height="1em"
+      aria-hidden={title ? undefined : true}
+      role={title ? "img" : undefined}
+      focusable="false"
+      {...props}
+    >
+      {title ? <title>{title}</title> : null}
+      <path
+        fillRule="evenodd"
+        d="M3.5 21.5V5.5a1.5 1.5 0 0 1 1.5-1.5h14a1.5 1.5 0 0 1 1.5 1.5v16h-17ZM7 6.5h3L8.5 9.5ZM10.5 6.5h3L12 9.5ZM14 6.5h3L15.5 9.5ZM9.25 21.5v-6.25a2.75 2.75 0 0 1 5.5 0v6.25Z"
+      />
+    </svg>
   );
 }
 

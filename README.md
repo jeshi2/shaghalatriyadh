@@ -270,6 +270,31 @@ off — see [Deployment](#deployment). Once the domain is chosen, set
 `NEXT_PUBLIC_SITE_URL` to it, drop `NEXT_PUBLIC_NOINDEX`, and redeploy; the
 canonical URLs, hreflang tags, sitemap and structured data all follow from it.
 
+## Brand assets
+
+The logo is a Najdi mud-brick house — triangular wall vents over an arched
+door — chosen because it reads as Riyadh specifically, stays legible down to
+16px, and is symmetric, so it needs no mirroring between the Arabic and
+English layouts.
+
+| Where              | File                                                      |
+| ------------------ | --------------------------------------------------------- |
+| Header and footer  | `BrandIcon` in `src/components/ui/icons.tsx` (inline SVG) |
+| Favicon            | `src/app/icon.svg` — navy tile, sand mark                 |
+| iOS home screen    | `src/app/apple-icon.png` (180×180)                        |
+| Social card        | drawn inline in `src/app/[locale]/opengraph-image.tsx`    |
+| Standalone exports | `public/brand/` — navy and white SVG, 512px PNGs          |
+
+`icon.svg` and `apple-icon.png` are Next.js file conventions: dropping them in
+`src/app/` is all that is needed, and the `<link>` tags are generated.
+
+The files in `public/brand/` are there for everything outside the site —
+the Google Business Profile, WhatsApp Business, invoices, signage. Use
+`mark-navy.svg` on light backgrounds and `mark-white.svg` on dark ones.
+
+The mark inherits `currentColor` wherever it is used inline, so it follows the
+surrounding text colour rather than hard-coding navy.
+
 ## Accessibility
 
 - Skip link, landmark structure and one `h1` per page.
@@ -361,7 +386,7 @@ headers there — `next.config.ts` headers are not emitted into static files.
       for the worker. These are legal statements, not marketing copy.
 - [ ] Register the domain, point it at the Vercel project, clear
       `NEXT_PUBLIC_NOINDEX`, and create the Google Business Profile.
-- [ ] Replace the generated social card with branded artwork.
-- [ ] Add a real favicon (the create-next-app default is still in place).
+- [ ] Review the social card and favicon with the owner — both now carry the
+      brand mark, but neither has been signed off.
 - [ ] Verify in Search Console and submit the sitemap.
 - [ ] Configure the security headers at the CDN if one is used.

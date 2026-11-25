@@ -1,4 +1,4 @@
-import { HouseIcon } from "@/components/ui/icons";
+import { BrandIcon } from "@/components/ui/icons";
 import { Link } from "@/i18n/navigation";
 
 type BrandMarkProps = {
@@ -9,9 +9,8 @@ type BrandMarkProps = {
 };
 
 /**
- * Wordmark used in the header and footer. A placeholder glyph stands in for
- * the real logo — drop an SVG in `public/` and swap the icon when branding is
- * supplied.
+ * Wordmark used in the header and footer: the brand mark in a navy tile,
+ * followed by the company name as live text so it stays translatable.
  */
 export function BrandMark({ name, tagline }: BrandMarkProps) {
   return (
@@ -20,7 +19,7 @@ export function BrandMark({ name, tagline }: BrandMarkProps) {
         className="flex size-10 shrink-0 items-center justify-center rounded-card bg-brand-700 text-xl text-white"
         aria-hidden="true"
       >
-        <HouseIcon />
+        <BrandIcon />
       </span>
       <span className="flex flex-col leading-tight">
         <span className="text-base font-bold text-ink-900">{name}</span>
