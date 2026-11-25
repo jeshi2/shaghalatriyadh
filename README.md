@@ -74,6 +74,7 @@ HTML. There are no secrets in this project. See [`.env.example`](.env.example).
 | `NEXT_PUBLIC_WHATSAPP_NUMBER`          | recommended   | WhatsApp line, digits only, international format (`966596249823`). Defaults to the number in `src/config/business.ts`.                                     |
 | `NEXT_PUBLIC_CONTACT_PHONE`            | recommended   | Phone in E.164 (`+966596249823`); displayed formatted.                                                                                                     |
 | `NEXT_PUBLIC_CONTACT_EMAIL`            | yes           | Enquiries inbox.                                                                                                                                           |
+| `NEXT_PUBLIC_NOINDEX`                  | temporary     | `true` blocks all crawling and drops the sitemap from `robots.txt`. Set while the site is on the `*.vercel.app` address; remove it on the real domain.     |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | optional      | Google Search Console verification token.                                                                                                                  |
 
 > `NEXT_PUBLIC_*` values are baked in at **build time**. After changing one,
@@ -264,7 +265,9 @@ which is another reason to prefer the unhyphenated spelling.
 Avoid an Arabic-script domain (`شغالات.السعودية`) as the primary: it breaks in
 some apps when shared, and it is hard to type on a Latin keyboard.
 
-Once the domain is chosen, set `NEXT_PUBLIC_SITE_URL` to it and rebuild — the
+Until then the site runs on the free Vercel subdomain, with crawling turned
+off — see [Deployment](#deployment). Once the domain is chosen, set
+`NEXT_PUBLIC_SITE_URL` to it, drop `NEXT_PUBLIC_NOINDEX`, and redeploy; the
 canonical URLs, hreflang tags, sitemap and structured data all follow from it.
 
 ## Accessibility
@@ -297,6 +300,43 @@ checks on the main components.
 The site is fully static apart from the locale proxy, so it runs on any Node
 host (`npm run build && npm start`) or on Vercel with no extra configuration.
 
+### Current deployment: Vercel free tier
+
+The site is live on the free Vercel subdomain
+**<https://shaghalatriyadh.vercel.app>** until the real domain is registered.
+
+1. In Vercel, **Add New → Project**, import `jeshi2/domestic-services-qatar`.
+2. Name the project `shaghalatriyadh` — that is what produces the
+   `shaghalatriyadh.vercel.app` address. Framework detection, build command
+   and output directory need no changes.
+3. Add the environment variables under **Settings → Environment Variables**
+   (Production), as listed above. At minimum:
+
+   ```
+   NEXT_PUBLIC_SITE_URL=https://shaghalatriyadh.vercel.app
+   NEXT_PUBLIC_NOINDEX=true
+   NEXT_PUBLIC_CONTACT_EMAIL=...
+   ```
+
+4. Deploy. Every push to `main` redeploys.
+
+`NEXT_PUBLIC_NOINDEX=true` matters here: indexing the throwaway subdomain and
+then moving to the real domain means redirecting every URL and re-earning the
+ranking signals. Staying unindexed until the final domain costs nothing.
+
+### Moving to the real domain
+
+1. Register the domain (see [Domain name](#domain-name)) and add it in Vercel
+   under **Settings → Domains**.
+2. Change `NEXT_PUBLIC_SITE_URL` to the new origin and **remove**
+   `NEXT_PUBLIC_NOINDEX`.
+3. Redeploy — canonical URLs, hreflang, the sitemap, `robots.txt` and the
+   structured data all follow from that one variable.
+4. Only then: create the Google Business Profile, verify the domain in Search
+   Console and submit the sitemap.
+
+### Any other host
+
 1. Set the environment variables listed above for the production environment.
 2. `npm ci`
 3. `npm run build`
@@ -319,7 +359,8 @@ headers there — `next.config.ts` headers are not emitted into static files.
 - [ ] Have the owner confirm the claims in the copy — the replacement policy,
       what the monthly contract covers, and who carries legal responsibility
       for the worker. These are legal statements, not marketing copy.
-- [ ] Register the domain and create the Google Business Profile.
+- [ ] Register the domain, point it at the Vercel project, clear
+      `NEXT_PUBLIC_NOINDEX`, and create the Google Business Profile.
 - [ ] Replace the generated social card with branded artwork.
 - [ ] Add a real favicon (the create-next-app default is still in place).
 - [ ] Verify in Search Console and submit the sitemap.

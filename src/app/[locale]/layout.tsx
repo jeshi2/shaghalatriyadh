@@ -46,8 +46,8 @@ export async function generateMetadata({
     },
     description: t("tagline"),
     robots: {
-      index: true,
-      follow: true,
+      index: site.isIndexable,
+      follow: site.isIndexable,
     },
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
       ? {
