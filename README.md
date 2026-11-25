@@ -236,6 +236,11 @@ anything on-page for local ranking:
 4. **Reviews**: ask real customers. The site deliberately ships no invented
    testimonials or ratings; add them only when they are real and attributable.
 
+[`docs/google-business-profile.md`](docs/google-business-profile.md) holds the
+ready-to-paste content for all of this — categories, service areas, bilingual
+descriptions, the service list, hours, and the Search Console steps — plus the
+order to do it in.
+
 ## Domain name
 
 The aim is a domain that matches what people type into Google in Arabic, in
