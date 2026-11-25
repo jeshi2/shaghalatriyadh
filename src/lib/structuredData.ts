@@ -77,7 +77,6 @@ export function buildLocalBusiness({
     description,
     url,
     telephone: business.phone.e164,
-    email: business.email,
     identifier: business.licenceNumber,
     address: postalAddress(locale),
     geo: {

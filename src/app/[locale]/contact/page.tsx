@@ -4,12 +4,7 @@ import { OpeningHoursList } from "@/components/layout/OpeningHoursList";
 import { ExternalButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import {
-  MailIcon,
-  PhoneIcon,
-  PinIcon,
-  WhatsAppIcon,
-} from "@/components/ui/icons";
+import { PhoneIcon, PinIcon, WhatsAppIcon } from "@/components/ui/icons";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { business } from "@/config/business";
@@ -56,7 +51,7 @@ export default async function ContactPage({
         description={t("description")}
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2">
         <Card>
           <span
             className="flex size-12 items-center justify-center rounded-card bg-whatsapp/15 text-2xl text-ink-900"
@@ -94,27 +89,6 @@ export default async function ContactPage({
             className="mt-auto"
           >
             <span dir="ltr">{business.phone.display}</span>
-          </ExternalButtonLink>
-        </Card>
-
-        <Card>
-          <span
-            className="flex size-12 items-center justify-center rounded-card bg-brand-50 text-2xl text-brand-700"
-            aria-hidden="true"
-          >
-            <MailIcon />
-          </span>
-          <h2 className="text-lg font-bold">{t("emailTitle")}</h2>
-          <p className="text-sm leading-relaxed text-ink-500">
-            {t("emailDescription")}
-          </p>
-          <ExternalButtonLink
-            href={`mailto:${business.email}`}
-            variant="outline"
-            fullWidth
-            className="mt-auto"
-          >
-            <span dir="ltr">{business.email}</span>
           </ExternalButtonLink>
         </Card>
       </div>

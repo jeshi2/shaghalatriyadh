@@ -1,6 +1,6 @@
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { BrandMark } from "@/components/layout/BrandMark";
-import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import { PhoneIcon, PinIcon } from "@/components/ui/icons";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { business, serviceAreaNames } from "@/config/business";
 import { mainNav } from "@/config/navigation";
@@ -72,15 +72,6 @@ export function Footer() {
               >
                 <PhoneIcon className="shrink-0 text-brand-700" />
                 <span dir="ltr">{business.phone.display}</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${business.email}`}
-                className="flex items-center gap-2 rounded-sm hover:text-brand-700"
-              >
-                <MailIcon className="shrink-0 text-brand-700" />
-                <span dir="ltr">{business.email}</span>
               </a>
             </li>
             <li className="flex items-start gap-2">

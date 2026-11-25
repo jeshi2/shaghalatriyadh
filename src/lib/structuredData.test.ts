@@ -28,7 +28,6 @@ describe("buildLocalBusiness", () => {
   it("carries the contact details from the business config", () => {
     expect(schema).toMatchObject({
       telephone: business.phone.e164,
-      email: business.email,
       identifier: business.licenceNumber,
     });
   });

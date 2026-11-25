@@ -13,7 +13,6 @@ import type { Locale } from "@/i18n/routing";
 const env = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE,
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
 };
 
 /**
@@ -54,8 +53,8 @@ export const business = {
     },
   },
 
-  /** PLACEHOLDER — replace with the real enquiries inbox. */
-  email: env.email ?? "info@example.sa",
+  // The business takes enquiries on WhatsApp and by phone only; there is
+  // deliberately no email address anywhere on the site.
 
   address: {
     /** PLACEHOLDER — street address. */

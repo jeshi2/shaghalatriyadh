@@ -73,7 +73,6 @@ HTML. There are no secrets in this project. See [`.env.example`](.env.example).
 | `NEXT_PUBLIC_SITE_URL`                 | in production | Absolute origin, no trailing slash. Used for canonical URLs, hreflang, the sitemap, `robots.txt` and structured data. Defaults to `http://localhost:3000`. |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER`          | recommended   | WhatsApp line, digits only, international format (`966596249823`). Defaults to the number in `src/config/business.ts`.                                     |
 | `NEXT_PUBLIC_CONTACT_PHONE`            | recommended   | Phone in E.164 (`+966596249823`); displayed formatted.                                                                                                     |
-| `NEXT_PUBLIC_CONTACT_EMAIL`            | yes           | Enquiries inbox.                                                                                                                                           |
 | `NEXT_PUBLIC_NOINDEX`                  | temporary     | `true` blocks all crawling and drops the sitemap from `robots.txt`. Set while the site is on the `*.vercel.app` address; remove it on the real domain.     |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | optional      | Google Search Console verification token.                                                                                                                  |
 
@@ -87,7 +86,7 @@ Everything the site says about the business lives in one file:
 codebase hard-codes a phone number, address or opening time.
 
 It holds the trading name (Arabic and English), commercial registration
-number, WhatsApp line, phone, email, Riyadh address, map coordinates, opening
+number, WhatsApp line, phone, Riyadh address, map coordinates, opening
 hours, the districts served and optional social profiles. Values that still
 need real data are marked `PLACEHOLDER`.
 
@@ -340,7 +339,6 @@ The site is live on the free Vercel subdomain
    ```
    NEXT_PUBLIC_SITE_URL=https://shaghalatriyadh.vercel.app
    NEXT_PUBLIC_NOINDEX=true
-   NEXT_PUBLIC_CONTACT_EMAIL=...
    ```
 
 4. Deploy. Every push to `main` redeploys.

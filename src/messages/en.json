@@ -6,8 +6,7 @@
     "language": "Language",
     "switchLanguage": "Change language to {language}",
     "whatsappCta": "Chat on WhatsApp",
-    "callUs": "Call us",
-    "emailUs": "Email us"
+    "callUs": "Call us"
   },
   "nav": {
     "primary": "Main menu",
@@ -338,16 +337,14 @@
   "contactPage": {
     "eyebrow": "Contact",
     "title": "Reach us the way that suits you",
-    "description": "WhatsApp is the fastest way to get a reply. You can also call or email us during working hours.",
+    "description": "WhatsApp is the fastest way to get a reply. You can also call us during working hours.",
     "metaTitle": "Contact us | Monthly Housemaid in Riyadh",
-    "metaDescription": "Get in touch about a monthly housemaid, cleaner or nanny in Riyadh: WhatsApp, phone, email, office address and opening hours.",
+    "metaDescription": "Get in touch about a monthly housemaid, cleaner or nanny in Riyadh: WhatsApp, phone, office address and opening hours.",
     "channelsTitle": "Ways to reach us",
     "whatsappTitle": "WhatsApp",
     "whatsappDescription": "The fastest option. Send us your request and we reply within working hours.",
     "phoneTitle": "Phone",
     "phoneDescription": "For a direct call during working hours.",
-    "emailTitle": "Email",
-    "emailDescription": "For requests that need documents or written detail.",
     "addressTitle": "Address",
     "hoursTitle": "Opening hours",
     "hoursNote": "All times are Riyadh time (GMT+3)."
