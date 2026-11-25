@@ -176,6 +176,24 @@ suspended listing, and it is fraud.
 
 Only once `robots.txt` has stopped saying `Disallow: /`.
 
+### While the site is on the vercel.app subdomain
+
+A **Domain** property needs a DNS TXT record, and you do not control DNS for
+`vercel.app`. Use a **URL prefix** property instead, verified by meta tag:
+
+1. <https://search.google.com/search-console> → **Add property** → **URL
+   prefix** → `https://shaghalatriyadh.vercel.app`
+2. Choose the **HTML tag** verification method and copy the token — the
+   `content` value, not the whole tag.
+3. Set it in Vercel as `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` and redeploy.
+   The locale layout already renders the tag when that variable is present.
+4. Press Verify.
+
+This property is throwaway: it does not carry over to the real domain. Redo
+the steps below once the domain is live.
+
+### On the real domain
+
 1. <https://search.google.com/search-console> → **Add property** → **Domain**
    (not URL prefix — a domain property covers www, non-www and every
    subdomain).
@@ -185,8 +203,17 @@ Only once `robots.txt` has stopped saying `Disallow: /`.
    URLs and their `hreflang` alternates.
 4. **Settings → International targeting** needs nothing — `hreflang` is in the
    sitemap and in every page's `<head>`.
-5. Use **URL Inspection** on `/ar` to confirm Google sees the Arabic version
-   and reports no `noindex`.
+5. Use **URL Inspection** on `/ar` → **Test live URL** to confirm Google
+   fetches the page, sees the Arabic version and reports no `noindex`. This
+   is also the definitive check that Vercel's firewall is not challenging
+   Googlebot: if the live test fetches cleanly, crawling is fine.
+
+> Vercel's firewall can show a "Security Checkpoint" challenge to automated
+> clients. Bot Protection is **inactive** on this project, so verified
+> crawlers are not affected — the challenge comes from rate-based DDoS
+> mitigation and targets individual IPs that make bursts of requests. If your
+> own `curl` testing starts getting challenged, clear it under
+> **Firewall → Persistent Actions**.
 
 ### What to watch in the first month
 
