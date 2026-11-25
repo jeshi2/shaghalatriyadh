@@ -305,7 +305,7 @@ host (`npm run build && npm start`) or on Vercel with no extra configuration.
 The site is live on the free Vercel subdomain
 **<https://shaghalatriyadh.vercel.app>** until the real domain is registered.
 
-1. In Vercel, **Add New → Project**, import `jeshi2/domestic-services-qatar`.
+1. In Vercel, **Add New → Project**, import `jeshi2/shaghalatriyadh`.
 2. Name the project `shaghalatriyadh` — that is what produces the
    `shaghalatriyadh.vercel.app` address. Framework detection, build command
    and output directory need no changes.
