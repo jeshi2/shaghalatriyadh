@@ -1,4 +1,5 @@
-import { business } from "@/config/business";
+import { business, countryName, serviceAreaNames } from "@/config/business";
+import type { Locale } from "@/i18n/routing";
 import { dayOrder, groupOpeningHours, type DayKey } from "@/lib/openingHours";
 
 /**
@@ -30,14 +31,20 @@ function openingHoursSpecification(): JsonLdObject[] {
     }));
 }
 
-function postalAddress(): JsonLdObject {
+function postalAddress(locale: Locale): JsonLdObject {
+  const isArabic = locale === "ar";
+
   return {
     "@type": "PostalAddress",
-    streetAddress: business.address.street,
-    addressLocality: business.address.city,
-    addressRegion: business.address.district,
+    streetAddress: isArabic
+      ? business.address.street
+      : business.address.streetEn,
+    addressLocality: isArabic ? business.address.city : business.address.cityEn,
+    addressRegion: isArabic
+      ? business.address.region
+      : business.address.regionEn,
     addressCountry: business.address.countryCode,
-    postOfficeBoxNumber: business.address.poBox,
+    postalCode: business.address.postalCode,
   };
 }
 
@@ -45,6 +52,7 @@ export type LocalBusinessOptions = {
   name: string;
   description: string;
   url: string;
+  locale: Locale;
   /** Absolute URL of the Open Graph image, used as the business image. */
   image?: string;
 };
@@ -53,6 +61,7 @@ export function buildLocalBusiness({
   name,
   description,
   url,
+  locale,
   image,
 }: LocalBusinessOptions): JsonLdObject {
   const sameAs = Object.values(business.social).filter((link): link is string =>
@@ -70,16 +79,24 @@ export function buildLocalBusiness({
     telephone: business.phone.e164,
     email: business.email,
     identifier: business.licenceNumber,
-    address: postalAddress(),
+    address: postalAddress(locale),
     geo: {
       "@type": "GeoCoordinates",
       latitude: business.geo.latitude,
       longitude: business.geo.longitude,
     },
-    areaServed: business.serviceAreas.map((area) => ({
-      "@type": "City",
-      name: area,
-    })),
+    // Riyadh first, then each district: this is the local-SEO signal that
+    // ties the business to the city people are searching in.
+    areaServed: [
+      {
+        "@type": "City",
+        name: locale === "ar" ? business.address.city : business.address.cityEn,
+      },
+      ...serviceAreaNames(locale).map((area) => ({
+        "@type": "Place",
+        name: area,
+      })),
+    ],
     openingHoursSpecification: openingHoursSpecification(),
     ...(image ? { image } : {}),
     ...(sameAs.length > 0 ? { sameAs } : {}),
@@ -111,6 +128,7 @@ export type ServiceSchemaOptions = {
   providerName: string;
   providerUrl: string;
   serviceType: string;
+  locale: Locale;
 };
 
 export function buildService({
@@ -120,6 +138,7 @@ export function buildService({
   providerName,
   providerUrl,
   serviceType,
+  locale,
 }: ServiceSchemaOptions): JsonLdObject {
   return {
     "@context": "https://schema.org",
@@ -135,8 +154,12 @@ export function buildService({
       url: providerUrl,
     },
     areaServed: {
-      "@type": "Country",
-      name: business.address.country,
+      "@type": "City",
+      name: locale === "ar" ? business.address.city : business.address.cityEn,
+      containedInPlace: {
+        "@type": "Country",
+        name: countryName(locale),
+      },
     },
   };
 }

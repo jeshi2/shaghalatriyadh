@@ -3,31 +3,31 @@ import { buildWhatsAppUrl, composeWhatsAppMessage } from "./whatsapp";
 
 describe("buildWhatsAppUrl", () => {
   it("builds a wa.me link from the configured number", () => {
-    expect(buildWhatsAppUrl({ number: "97433221100" })).toBe(
-      "https://wa.me/97433221100",
+    expect(buildWhatsAppUrl({ number: "966596249823" })).toBe(
+      "https://wa.me/966596249823",
     );
   });
 
   it("strips plus signs, spaces and dashes from the number", () => {
-    expect(buildWhatsAppUrl({ number: "+974 3322-1100" })).toBe(
-      "https://wa.me/97433221100",
+    expect(buildWhatsAppUrl({ number: "+966 59-624 9823" })).toBe(
+      "https://wa.me/966596249823",
     );
   });
 
   it("percent-encodes the prefilled message", () => {
     const url = buildWhatsAppUrl({
-      number: "97433221100",
+      number: "966596249823",
       message: "Hello, I need a cleaner & a nanny",
     });
 
     expect(url).toBe(
-      "https://wa.me/97433221100?text=Hello%2C%20I%20need%20a%20cleaner%20%26%20a%20nanny",
+      "https://wa.me/966596249823?text=Hello%2C%20I%20need%20a%20cleaner%20%26%20a%20nanny",
     );
   });
 
   it("encodes Arabic messages and newlines", () => {
     const url = buildWhatsAppUrl({
-      number: "97433221100",
+      number: "966596249823",
       message: "مرحبًا\nأرغب في خدمة تنظيف",
     });
 
@@ -39,8 +39,8 @@ describe("buildWhatsAppUrl", () => {
   });
 
   it("omits the query string when there is no message", () => {
-    expect(buildWhatsAppUrl({ number: "97433221100", message: "   " })).toBe(
-      "https://wa.me/97433221100",
+    expect(buildWhatsAppUrl({ number: "966596249823", message: "   " })).toBe(
+      "https://wa.me/966596249823",
     );
   });
 });
@@ -70,8 +70,8 @@ describe("composeWhatsAppMessage", () => {
   });
 
   it("trims each line", () => {
-    expect(composeWhatsAppMessage(["  Hello  ", "  Area: Doha "])).toBe(
-      "Hello\nArea: Doha",
+    expect(composeWhatsAppMessage(["  Hello  ", "  Area: Riyadh "])).toBe(
+      "Hello\nArea: Riyadh",
     );
   });
 
@@ -80,7 +80,7 @@ describe("composeWhatsAppMessage", () => {
       "مرحبًا، أنا نورة.",
       "الخدمة المطلوبة: جليسة أطفال",
     ]);
-    const url = buildWhatsAppUrl({ number: "97433221100", message });
+    const url = buildWhatsAppUrl({ number: "966596249823", message });
 
     expect(decodeURIComponent(url.split("?text=")[1])).toBe(message);
   });

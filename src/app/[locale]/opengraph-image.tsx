@@ -17,7 +17,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const alt = "Qatar Home Services — قطر لخدمات المنازل";
+export const alt = "Riyadh Home Services — خدمات منزلية الرياض";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -31,7 +31,7 @@ export default async function OpenGraphImage() {
         flexDirection: "column",
         justifyContent: "space-between",
         padding: 72,
-        background: "linear-gradient(135deg, #8a1538 0%, #4d0b22 100%)",
+        background: "linear-gradient(135deg, #123a5c 0%, #091f31 100%)",
         color: "white",
         fontFamily: "sans-serif",
       }}
@@ -46,7 +46,7 @@ export default async function OpenGraphImage() {
             color: "#ead7b8",
           }}
         >
-          {`${business.address.city} · ${business.address.country}`}
+          {`${business.address.cityEn} · ${business.address.countryEn}`}
         </div>
         <div
           style={{
@@ -62,15 +62,15 @@ export default async function OpenGraphImage() {
           style={{
             display: "flex",
             fontSize: 34,
-            color: "#f5c6d3",
+            color: "#c0d8ec",
             maxWidth: 900,
           }}
         >
-          {"Housemaids, cleaning, childcare, elderly care and home cooking"}
+          {"Monthly housemaids, cleaners, nannies, cooks and elderly care"}
         </div>
       </div>
 
-      <div style={{ display: "flex", fontSize: 26, color: "#f5ecdc" }}>
+      <div style={{ display: "flex", fontSize: 26, color: "#e2edf7" }}>
         {"WhatsApp enquiries · Arabic & English"}
       </div>
     </div>,

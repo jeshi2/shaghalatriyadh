@@ -99,6 +99,7 @@ export default async function LocaleLayout({
               name: t("brandName"),
               description: t("tagline"),
               url: homeUrl,
+              locale,
               image: ogImageUrl(locale),
             })}
           />

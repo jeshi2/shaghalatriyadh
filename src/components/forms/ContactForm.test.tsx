@@ -85,15 +85,15 @@ describe("ContactForm validation", () => {
     const { open } = renderForm();
 
     completeEnglishForm();
-    fill(/Phone number/, "call me");
+    fill(/Mobile number/, "call me");
     submit();
 
     expect(open).not.toHaveBeenCalled();
     expect(
-      screen.getByText("Enter a valid phone number or leave the field empty."),
+      screen.getByText("Enter a valid mobile number or leave the field empty."),
     ).toBeInTheDocument();
 
-    fill(/Phone number/, "");
+    fill(/Mobile number/, "");
     submit();
     expect(open).toHaveBeenCalledOnce();
   });
@@ -104,8 +104,8 @@ describe("ContactForm submission", () => {
     const { open } = renderForm();
 
     completeEnglishForm();
-    fill(/Area/, "The Pearl");
-    fill(/Phone number/, "+974 3322 1100");
+    fill(/District/, "Al Narjis");
+    fill(/Mobile number/, "+974 3322 1100");
     submit();
 
     expect(open).toHaveBeenCalledOnce();
@@ -116,8 +116,8 @@ describe("ContactForm submission", () => {
 
     const message = decodeURIComponent(String(url).split("?text=")[1]);
     expect(message).toContain("Hello, my name is Noora Al-Kuwari.");
-    expect(message).toContain("Service needed: Nanny and childcare");
-    expect(message).toContain("Area: The Pearl");
+    expect(message).toContain("Service needed: Nanny");
+    expect(message).toContain("District in Riyadh: Al Narjis");
     expect(message).toContain("Contact number: +974 3322 1100");
     expect(message).toContain("Details: Two children, three days a week");
   });
@@ -131,7 +131,7 @@ describe("ContactForm submission", () => {
     const message = decodeURIComponent(
       String(open.mock.calls[0][0]).split("?text=")[1],
     );
-    expect(message).not.toContain("Area:");
+    expect(message).not.toContain("District in Riyadh:");
     expect(message).not.toContain("Contact number:");
   });
 
@@ -161,7 +161,7 @@ describe("ContactForm submission", () => {
     const message = decodeURIComponent(
       String(open.mock.calls[0][0]).split("?text=")[1],
     );
-    expect(message).toContain("مرحبًا، أنا نورة الكواري.");
-    expect(message).toContain("الخدمة المطلوبة: جليسة أطفال");
+    expect(message).toContain("السلام عليكم، أنا نورة الكواري.");
+    expect(message).toContain("الخدمة المطلوبة: مربية أطفال");
   });
 });

@@ -3,7 +3,7 @@ import { business } from "@/config/business";
 export type DayKey = keyof typeof business.openingHours;
 export type DayHours = { opens: string; closes: string } | null;
 
-/** Qatar's working week starts on Sunday; Friday and Saturday are the weekend. */
+/** The Saudi week starts on Sunday; Friday is the weekly rest day. */
 export const dayOrder: readonly DayKey[] = [
   "sunday",
   "monday",

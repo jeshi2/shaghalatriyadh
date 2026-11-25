@@ -1,7 +1,7 @@
 {
   "common": {
-    "brandName": "Qatar Home Services",
-    "tagline": "Trusted domestic help and home services across Qatar",
+    "brandName": "Riyadh Home Services",
+    "tagline": "Monthly housemaids and trusted domestic help in Riyadh",
     "skipToContent": "Skip to main content",
     "language": "Language",
     "switchLanguage": "Change language to {language}",
@@ -33,7 +33,7 @@
     "contact": "Contact details",
     "openingHours": "Opening hours",
     "closed": "Closed",
-    "serviceAreas": "Serving {areas} and the rest of Qatar.",
+    "serviceAreas": "Serving {areas} and every district of Riyadh.",
     "rights": "© {year} {name}. All rights reserved.",
     "licence": "Commercial registration: {number}"
   },
@@ -43,133 +43,118 @@
     "backHome": "Back to the homepage"
   },
   "services": {
-    "full-time-maid": {
-      "name": "Full-time housemaid",
-      "summary": "A live-in housemaid for daily household work, with the contract and visa handled end to end.",
+    "monthly-housemaid": {
+      "name": "Monthly housemaid",
+      "summary": "A housemaid on a monthly contract in Riyadh — no recruitment paperwork and no long-term commitment.",
       "highlights": [
-        "Profile and interview before you choose",
-        "Contract under Qatar labour law",
-        "Follow-up after she starts"
+        "Renewable monthly contract",
+        "No recruitment process",
+        "Replacement available"
       ],
-      "description": "We help families in Qatar choose a live-in housemaid who fits the size of the home and the household routine. You receive candidate profiles with experience and spoken languages, we arrange the interview, and we then handle the contract, visa and medical steps so she starts work properly documented.",
+      "description": "A monthly housemaid suits families in Riyadh who need daily help at home without going through recruitment and its costs. You get a worker on a clear monthly contract, and we tell you her experience and the languages she speaks before she starts. She works under our legal responsibility, and if she is not the right fit for your home you can request a replacement under the terms of the contract.",
       "includes": [
         "Daily cleaning and tidying",
         "Laundry and ironing",
         "Help with meal preparation",
-        "Childcare under the family's supervision"
+        "Keeping children's rooms tidy"
       ],
-      "idealFor": "Families who need continuous daily help at home."
+      "idealFor": "Families in Riyadh who want daily help on a flexible monthly contract."
     },
-    "part-time-cleaning": {
-      "name": "Part-time cleaning",
-      "summary": "Cleaners by the hour or on a weekly schedule, with no long-term commitment.",
+    "trained-cleaners": {
+      "name": "Trained cleaners",
+      "summary": "Cleaners trained for villas, apartments and majlis areas, on daily or weekly visits.",
       "highlights": [
-        "Flexible hourly or weekly booking",
-        "Organised, trained team",
-        "Cleaning supplies on request"
+        "Trained in deep cleaning",
+        "Villas and majlis areas",
+        "Daily or weekly visits"
       ],
-      "description": "Suited to apartments and villas that need regular cleaning without a live-in maid. You set the hours and days, and we send the same team wherever possible so they learn your home and keep the standard consistent on every visit.",
+      "description": "Cleaners trained to use the right tools and products for each surface. The service suits villas, apartments and majlis areas, whether you need regular upkeep or a thorough clean before an occasion or after maintenance. You set the hours and days, and we send the same team wherever possible so they learn your home.",
       "includes": [
-        "Bedrooms and living areas",
-        "Kitchen and bathrooms",
-        "Floors and interior windows",
-        "General tidying"
+        "Kitchens, including degreasing",
+        "Bathrooms, including descaling",
+        "Majlis, carpets and upholstery",
+        "Windows and interior glass"
       ],
-      "idealFor": "Apartments, smaller households and anyone who only needs periodic cleaning."
-    },
-    "deep-cleaning": {
-      "name": "Deep cleaning",
-      "summary": "A thorough clean before moving in or after renovation, using specialist equipment.",
-      "highlights": [
-        "Kitchen and bathrooms cleaned in depth",
-        "Steam cleaning for sofas and carpets",
-        "Ideal before or after a move"
-      ],
-      "description": "A top-to-bottom clean that reaches what day-to-day cleaning does not: inside cupboards, behind appliances, air-conditioning vents, kitchen grease, and steam cleaning for upholstery. The team completes it in a single visit against a clear checklist.",
-      "includes": [
-        "Degreasing the kitchen",
-        "Descaling bathrooms",
-        "Steam cleaning upholstery and carpets",
-        "Windows and AC vents"
-      ],
-      "idealFor": "New homes, property handovers and post-maintenance cleaning."
+      "idealFor": "Villas, apartments and majlis areas needing regular or deep cleaning."
     },
     "nanny": {
-      "name": "Nanny and childcare",
-      "summary": "Experienced nannies who care for children and keep their daily routine.",
+      "name": "Nanny",
+      "summary": "Experienced nannies who care for children and keep their daily routine at home.",
       "highlights": [
         "Documented experience with children",
-        "Full-time or part-time",
+        "Monthly or part-time",
         "Keeps the daily routine"
       ],
-      "description": "We shortlist nannies with practical experience across age groups, from infants to school age. You see each candidate's experience and spoken languages and can interview her yourself before deciding whether she suits your family.",
+      "description": "We shortlist nannies with practical experience across age groups, from infants to school age. You see each candidate's experience and spoken languages, and you can meet her before agreeing anything to check she suits your family and how she works with children.",
       "includes": [
         "Daily care and feeding",
         "Sleep and personal hygiene routines",
         "Play and simple learning activities",
         "School drop-off and pick-up if agreed"
       ],
-      "idealFor": "Working families who need dependable childcare."
+      "idealFor": "Working families in Riyadh who need dependable childcare."
     },
-    "elderly-care": {
-      "name": "Elderly care",
-      "summary": "Companionship and in-home support for older family members, with respect for your privacy.",
+    "cooks": {
+      "name": "Cooks",
+      "summary": "Home cooks preparing daily meals the way your family likes them, Saudi dishes included.",
       "highlights": [
-        "Daily companionship and assistance",
-        "Medication reminders",
-        "Arabic or English speaking"
-      ],
-      "description": "In-home support that helps older people stay safely at home: help with mobility and personal hygiene, medication reminders, suitable meals and daily companionship. This is non-medical care and we say so before any agreement; if the situation needs qualified nursing, we tell you.",
-      "includes": [
-        "Help with mobility and personal hygiene",
-        "Medication reminders",
-        "Preparing suitable meals",
-        "Daily companionship and check-ins"
-      ],
-      "idealFor": "Families arranging in-home care for their parents."
-    },
-    "cooking": {
-      "name": "Home cooking",
-      "summary": "Daily home-cooked meals prepared the way your family likes them.",
-      "highlights": [
-        "Arabic, Asian and international dishes",
+        "Saudi, Arabic and Asian cooking",
         "Batch cooking for the week",
         "Allergies and diets respected"
       ],
-      "description": "A cook or kitchen-experienced helper who prepares daily meals to your family's taste, including batch cooking for several days at a time. Food allergies, special diets and halal requirements are taken into account.",
+      "description": "Cooks experienced in daily home cooking to your family's taste, from Saudi and Arabic dishes to Asian cuisine. Meals can be prepared several days ahead by arrangement, with food allergies, special diets and halal requirements taken into account.",
       "includes": [
         "Daily meal preparation",
         "Grocery shopping if agreed",
         "Batch cooking for several days",
         "Kitchen clean-up afterwards"
       ],
-      "idealFor": "Busy households and anyone who wants regular home-cooked meals."
+      "idealFor": "Busy households and family gatherings that need regular home cooking."
+    },
+    "elderly-care": {
+      "name": "Elderly care",
+      "summary": "Companionship and in-home support for older family members in Riyadh, with respect for your privacy.",
+      "highlights": [
+        "Daily companionship and assistance",
+        "Medication reminders",
+        "Arabic or English speaking"
+      ],
+      "description": "In-home support that helps older people stay safely at home: help with mobility and personal hygiene, medication reminders, suitable meals and daily companionship. This is non-medical care and we say so before any agreement; if the situation needs qualified nursing, we tell you plainly.",
+      "includes": [
+        "Help with mobility and personal hygiene",
+        "Medication reminders",
+        "Meals suited to the person's needs",
+        "Daily companionship and check-ins"
+      ],
+      "idealFor": "Families arranging in-home care for their parents in Riyadh."
     }
   },
   "home": {
+    "metaTitle": "Monthly Housemaid in Riyadh | Cleaners, Nannies and Cooks",
+    "metaDescription": "Monthly housemaids in Riyadh, trained cleaners, nannies, cooks and elderly care. Clear monthly contracts and direct WhatsApp contact across every Riyadh district.",
     "hero": {
-      "eyebrow": "Domestic services in Qatar",
-      "title": "Trusted domestic help and home services in Doha and across Qatar",
-      "subtitle": "From a full-time housemaid to cleaning by the hour, childcare or elderly care. We shortlist suitable candidates, handle the contract and paperwork, and it all starts with one WhatsApp message.",
+      "eyebrow": "Domestic services in Riyadh",
+      "title": "Monthly housemaids in Riyadh, and domestic help you can rely on",
+      "subtitle": "Monthly housemaids, trained cleaners, nannies, cooks and elderly care — on clear monthly contracts, with no recruitment process. Send your request on WhatsApp and we will explain the options and the cost.",
       "secondaryCta": "Browse services",
       "trust": [
-        "Profiles and interviews before you choose",
-        "Proper contracts and paperwork",
-        "Support in Arabic and English"
+        "Clear monthly contracts, no hidden fees",
+        "Replacement available under the contract",
+        "We cover every district of Riyadh"
       ]
     },
     "valueProps": {
       "eyebrow": "Why us",
-      "title": "A clear process from the first message to the first day",
-      "description": "We keep it simple: understand what your household needs, shortlist the people who fit, and stay available after the service starts.",
+      "title": "One WhatsApp message, clear options the same day",
+      "description": "We keep it simple: understand what your household in Riyadh needs, shortlist who fits, and stay available after the service starts.",
       "items": {
         "vetted": {
-          "title": "Candidates we have screened",
-          "description": "We check experience and documents, and tell you which languages each candidate speaks before the interview."
+          "title": "Workers whose experience we know",
+          "description": "We check experience and documents and tell you which languages each worker speaks before you commit."
         },
         "legal": {
-          "title": "Proper paperwork",
-          "description": "Contracts, visas and medical checks in line with the regulations in force in Qatar."
+          "title": "Proper contracts",
+          "description": "Written contracts in line with the regulations in force in the Kingdom, with clear rights on both sides."
         },
         "response": {
           "title": "Fast WhatsApp replies",
@@ -177,112 +162,121 @@
         },
         "pricing": {
           "title": "Clear pricing",
-          "description": "We explain the cost and what it covers before you commit, with no fees that appear later."
+          "description": "We explain the monthly cost and what it covers before you commit, with no fees that appear later."
         }
       }
     },
     "servicesSection": {
       "eyebrow": "Our services",
-      "title": "Pick the service your household needs",
+      "title": "Pick the service your household in Riyadh needs",
       "description": "Every service has a page explaining what it covers and who it suits, and you can ask us about any detail on WhatsApp.",
       "cardCta": "Service details",
       "allServices": "All services"
     },
+    "areasSection": {
+      "eyebrow": "Service areas",
+      "title": "We cover Riyadh district by district",
+      "description": "From north to south Riyadh, we reach your home. If your district is not listed, ask — we probably cover it."
+    },
     "howItWorks": {
       "eyebrow": "How it works",
-      "title": "Four steps from first contact to the first day",
+      "title": "Four steps from the first message to the first day",
       "description": "No long forms and no unnecessary visits. The steps are clear and you stay in control at every stage.",
       "steps": [
         {
           "title": "Send us your request",
-          "description": "Message us on WhatsApp with the service you need, your area, and the hours or days you have in mind."
+          "description": "Message us on WhatsApp with the service you need, your district in Riyadh, and the hours or working days."
         },
         {
-          "title": "We explain the options",
-          "description": "A few short questions about your household, then the available options and what each one costs."
+          "title": "We explain options and cost",
+          "description": "A few short questions about the home and the tasks, then the options and the monthly cost."
         },
         {
           "title": "You choose",
-          "description": "We share the profiles that fit and you interview the candidates before committing to anything."
+          "description": "We present suitable workers with their experience and languages, and you choose before committing."
         },
         {
-          "title": "We handle the paperwork",
-          "description": "We complete the contract and the required formalities, and follow up once work has started."
+          "title": "Contract and start",
+          "description": "We sign a clear monthly contract and the work begins, and we check in over the first weeks."
         }
       ]
     },
     "faq": {
       "eyebrow": "FAQ",
-      "title": "Questions we are asked often",
+      "title": "Questions Riyadh customers ask most",
       "description": "If your question is not answered here, send it on WhatsApp and we will go through the details with you.",
       "items": [
         {
-          "question": "What is the difference between a full-time maid and part-time cleaning?",
-          "answer": "A full-time maid lives in the home and handles daily work under a long-term contract. Part-time cleaning is booked as individual visits when you need them, with no long commitment."
+          "question": "What is a monthly housemaid, and how is it different from recruitment?",
+          "answer": "A monthly housemaid works for you on a monthly contract through the office, so you take on no recruitment process, no recruitment costs, and no visa or residency obligations. Recruitment means transferring a worker's sponsorship to you on a long-term contract. The monthly option is faster and more flexible, and can be renewed or ended month by month."
         },
         {
-          "question": "Do you handle the contract and the visa?",
-          "answer": "Yes. For full-time placements we handle the contract, visa and medical steps in line with the regulations in force in Qatar, and we tell you upfront which documents we need from you."
-        },
-        {
-          "question": "How long does it take before work starts?",
-          "answer": "It depends on the service, candidate availability and the official formalities. Send us your request and we will give you a realistic timeline for your case."
+          "question": "How much does a monthly housemaid cost in Riyadh?",
+          "answer": "It depends on the service, the working hours and the size of the home. We tell you the monthly price and what it covers before anything is agreed, and you can ask for a quote on WhatsApp in minutes."
         },
         {
           "question": "Can the worker be replaced if she is not the right fit?",
-          "answer": "Yes. The replacement policy and its conditions are set out in the contract before signing, so both sides know where they stand."
+          "answer": "Yes. The replacement policy and its conditions are written into the contract before signing, so both sides know where they stand, and we handle replacement requests as quickly as we can."
         },
         {
-          "question": "Which areas do you cover?",
-          "answer": "We serve Doha and the surrounding areas across Qatar. Tell us your area and we will confirm whether it is covered."
+          "question": "Do you cover all districts of Riyadh?",
+          "answer": "We cover most of Riyadh, north, south, east and west, including Al Olaya, Al Malqa, Al Narjis, Hittin, Al Yasmin, Qurtubah, Al Naseem and Al Suwaidi. Tell us your district and we will confirm."
         },
         {
-          "question": "How does pricing and payment work?",
-          "answer": "We explain the cost and what it covers before you agree to anything. Prices depend on the service and the hours involved, and you can ask for a quote on WhatsApp."
+          "question": "Who is legally responsible for the worker?",
+          "answer": "The worker is engaged through the office on a proper contract, and the office is the party responsible for her legal status. The contract sets out what falls to the office and what falls to you before anything starts."
+        },
+        {
+          "question": "How long before the worker starts?",
+          "answer": "It depends on the service and availability. Visit-based cleaning can be arranged quickly, while a monthly housemaid needs time to match the request and prepare the contract. We give you an estimate at first contact."
         }
       ]
     },
     "finalCta": {
-      "title": "Tell us what your household needs",
-      "description": "One message is enough for us to understand your request and explain the options and the cost.",
+      "title": "Tell us what your household in Riyadh needs",
+      "description": "One WhatsApp message is enough for us to understand your request and explain the options and the monthly cost.",
       "secondaryCta": "Contact page"
     }
   },
   "servicesPage": {
     "eyebrow": "Services",
-    "title": "Domestic services for every home in Qatar",
+    "title": "Domestic services in Riyadh: housemaids, cleaning, nannies, cooks and care",
     "description": "Open a service to see what it covers and who it suits, or send us your details and we will recommend the right fit.",
-    "metaTitle": "Domestic services",
-    "metaDescription": "Full-time housemaids, part-time cleaning, deep cleaning, nannies, elderly care and home cooking in Doha and across Qatar.",
+    "metaTitle": "Domestic Services in Riyadh | Monthly Housemaids and Cleaners",
+    "metaDescription": "Monthly housemaids, trained cleaners, nannies, cooks and elderly care in Riyadh. See what each service covers and ask for a quote on WhatsApp.",
     "detail": {
       "includesTitle": "What the service covers",
       "highlightsTitle": "Good to know",
       "idealForTitle": "Suited to",
       "otherServices": "Other services",
       "backToServices": "Back to services",
-      "askAbout": "Ask about this service"
+      "askAbout": "Ask about this service",
+      "areasTitle": "We provide this service in",
+      "areasNote": "And the rest of Riyadh — ask us about your district.",
+      "metaTitle": "{service} in Riyadh",
+      "metaDescription": "{summary} We cover every district of Riyadh — ask for a quote on WhatsApp."
     }
   },
   "aboutPage": {
     "eyebrow": "About us",
-    "title": "A domestic services agency that works transparently with families in Qatar",
-    "description": "We help households find someone they can rely on at home, and we explain every step and cost before anything is agreed.",
-    "metaTitle": "About us",
-    "metaDescription": "How we work to provide domestic staff and home services in Qatar: a clear choice, proper paperwork, and follow-up after the work starts.",
+    "title": "A Riyadh domestic services office that works transparently with families",
+    "description": "We help households in Riyadh find someone they can rely on at home, and we explain every step and cost before anything is agreed.",
+    "metaTitle": "About us | Domestic Services in Riyadh",
+    "metaDescription": "How we work to provide monthly housemaids and domestic staff in Riyadh: a clear choice, proper contracts, and follow-up after the work starts.",
     "storyTitle": "What we do",
     "story": [
-      "We work between families in Qatar and the people who provide domestic help. Our job is to save you the searching and comparing: we listen to what you need, shortlist the people who fit it, and handle the official steps so the work starts properly documented.",
-      "Hiring someone into your home is a decision that belongs to the family, so we do not push to close an agreement and we do not send more candidates than you asked for. We tell you what we know about each candidate, and what we do not, and leave the decision to you after the interview."
+      "We work in Riyadh as the link between families and the people who provide domestic help. Our job is to save you the searching and comparing: we listen to what you need, shortlist who fits, and prepare a clear monthly contract so the work starts without ambiguity.",
+      "Bringing someone into your home is a decision that belongs to the family, so we do not push to close an agreement and we do not send more candidates than you asked for. We tell you what we know about each worker, and what we do not, and leave the decision to you."
     ],
     "valuesTitle": "What we commit to",
     "values": {
       "clarity": {
         "title": "Clarity before agreement",
-        "description": "You know the cost, what it covers and how long the formalities take before any financial commitment."
+        "description": "You know the monthly cost, what it covers and how long preparation takes before any financial commitment."
       },
       "legal": {
         "title": "Following the rules",
-        "description": "Contracts and procedures in line with the regulations in force in Qatar, with clear rights on both sides."
+        "description": "Contracts and procedures in line with the regulations in force in the Kingdom, with clear rights on both sides."
       },
       "respect": {
         "title": "Respect both ways",
@@ -293,37 +287,37 @@
         "description": "We stay in touch once work has begun so any issue is dealt with while it is still small."
       }
     },
-    "areasTitle": "Areas we serve",
-    "areasDescription": "We cover Doha and the surrounding areas. If your area is not listed, ask us and we will confirm whether it is covered.",
+    "areasTitle": "Districts we serve in Riyadh",
+    "areasDescription": "We cover most districts of Riyadh. If yours is not listed, ask us and we will confirm whether it is covered.",
     "detailsTitle": "Office details"
   },
   "howItWorksPage": {
     "eyebrow": "How it works",
-    "title": "The process from your first message to the first day of work",
+    "title": "How to arrange a monthly housemaid or domestic service in Riyadh",
     "description": "This is how we actually work, and what we need from you at each stage.",
-    "metaTitle": "How it works",
-    "metaDescription": "The steps for hiring domestic help in Qatar: your request, the options, the interview, the contract and formalities, then follow-up after work starts.",
+    "metaTitle": "How it works | Monthly Housemaid in Riyadh",
+    "metaDescription": "The steps to arrange a monthly housemaid, cleaner or nanny in Riyadh: your request, options and cost, your choice, the monthly contract, then follow-up.",
     "stepsTitle": "The steps in detail",
     "steps": [
       {
         "title": "Send us your request",
-        "description": "The easiest route is a WhatsApp message with the service you need, your area, and the hours or working days you have in mind. You can also call during working hours.",
-        "need": "What we need from you: the service, your area, and a good time to reach you."
+        "description": "The easiest route is a WhatsApp message with the service you need, your district in Riyadh, and the hours or working days you have in mind. You can also call during working hours.",
+        "need": "What we need from you: the service, your district, and a good time to reach you."
       },
       {
-        "title": "We explain the options and the cost",
-        "description": "A few short questions about the size of the home, the household and the tasks involved, then the available options with what each one costs and covers.",
+        "title": "We explain options and cost",
+        "description": "A few short questions about the size of the home, the household and the tasks involved, then the available options with the monthly cost and what it covers.",
         "need": "What we need from you: details of the home and the expected tasks."
       },
       {
-        "title": "You review candidates and interview",
-        "description": "We send the profiles that fit, with experience and spoken languages, and you choose who to interview. The interview happens before any commitment.",
-        "need": "What we need from you: a time for the interview and your decision."
+        "title": "You review workers and choose",
+        "description": "We present suitable workers with their experience and languages, and you choose who you prefer. Nothing is committed before you choose.",
+        "need": "What we need from you: your choice and a suitable start date."
       },
       {
-        "title": "Contract and formalities",
-        "description": "Once you have chosen, we prepare the contract and complete the required steps such as the visa and medical check, depending on the type of placement, and tell you which documents we need.",
-        "need": "What we need from you: the official documents required for the contract."
+        "title": "The monthly contract",
+        "description": "We prepare a monthly contract setting out the tasks, working hours, cost and replacement policy, and tell you which documents we need.",
+        "need": "What we need from you: the documents required for the contract."
       },
       {
         "title": "Work starts, and we follow up",
@@ -333,20 +327,20 @@
     ],
     "documentsTitle": "Documents we may ask for",
     "documents": [
-      "A copy of the applicant's ID",
-      "The tenancy contract or other proof of address",
+      "A copy of the national ID or iqama of the person requesting",
+      "A tenancy contract or other proof of address in Riyadh",
       "Up-to-date contact details",
-      "Further documents depending on the placement type and official requirements"
+      "Further documents depending on the service and the regulations"
     ],
     "timingTitle": "How long it takes",
-    "timingDescription": "It depends on the service, candidate availability and the official formalities. Cleaning by the hour can be arranged quickly, while a full-time placement needs time for the contract and visa. We give you an estimate for your case at first contact."
+    "timingDescription": "It depends on the service and availability. Cleaning visits can be arranged quickly, while a monthly housemaid needs time to match the request and prepare the contract. We give you an estimate for your case at first contact."
   },
   "contactPage": {
     "eyebrow": "Contact",
     "title": "Reach us the way that suits you",
     "description": "WhatsApp is the fastest way to get a reply. You can also call or email us during working hours.",
-    "metaTitle": "Contact us",
-    "metaDescription": "Get in touch about a housemaid or a cleaning service in Qatar: WhatsApp, phone, email, office address and opening hours.",
+    "metaTitle": "Contact us | Monthly Housemaid in Riyadh",
+    "metaDescription": "Get in touch about a monthly housemaid, cleaner or nanny in Riyadh: WhatsApp, phone, email, office address and opening hours.",
     "channelsTitle": "Ways to reach us",
     "whatsappTitle": "WhatsApp",
     "whatsappDescription": "The fastest option. Send us your request and we reply within working hours.",
@@ -356,16 +350,16 @@
     "emailDescription": "For requests that need documents or written detail.",
     "addressTitle": "Address",
     "hoursTitle": "Opening hours",
-    "hoursNote": "All times are Doha time (GMT+3)."
+    "hoursNote": "All times are Riyadh time (GMT+3)."
   },
   "whatsapp": {
-    "general": "Hello, I would like to ask about your domestic services in Qatar.",
-    "service": "Hello, I would like to ask about this service: {service}.",
+    "general": "Hello, I would like to ask about your domestic services in Riyadh.",
+    "service": "Hello, I would like to ask about this service in Riyadh: {service}.",
     "floatingLabel": "Contact us on WhatsApp",
     "form": {
       "greeting": "Hello, my name is {name}.",
       "serviceLine": "Service needed: {service}",
-      "areaLine": "Area: {area}",
+      "areaLine": "District in Riyadh: {area}",
       "phoneLine": "Contact number: {phone}",
       "detailsLine": "Details: {details}"
     }
@@ -375,15 +369,15 @@
     "description": "Fill in the fields below and WhatsApp opens with a ready message you can review before sending.",
     "nameLabel": "Name",
     "namePlaceholder": "Your full name",
-    "phoneLabel": "Phone number (optional)",
-    "phonePlaceholder": "+974 0000 0000",
+    "phoneLabel": "Mobile number (optional)",
+    "phonePlaceholder": "05X XXX XXXX",
     "serviceLabel": "Service needed",
     "servicePlaceholder": "Choose a service",
     "serviceOther": "Another service",
-    "areaLabel": "Area (optional)",
-    "areaPlaceholder": "For example: Doha, The Pearl",
+    "areaLabel": "District (optional)",
+    "areaPlaceholder": "For example: Al Olaya, Al Narjis, Al Malqa",
     "detailsLabel": "Request details",
-    "detailsPlaceholder": "Household size, hours or working days, and anything else we should know.",
+    "detailsPlaceholder": "Size of the home, household size, hours or working days, and anything else we should know.",
     "optional": "optional",
     "submit": "Continue on WhatsApp",
     "submitting": "Preparing your message…",
@@ -396,11 +390,24 @@
       "nameTooShort": "Please enter at least two characters.",
       "nameTooLong": "That name is too long.",
       "serviceRequired": "Please choose the service you need.",
-      "phoneInvalid": "Enter a valid phone number or leave the field empty.",
-      "areaTooLong": "That area name is too long.",
+      "phoneInvalid": "Enter a valid mobile number or leave the field empty.",
+      "areaTooLong": "That district name is too long.",
       "detailsRequired": "Please describe what you need.",
       "detailsTooShort": "Please add a little more detail (at least 10 characters).",
       "detailsTooLong": "Those details are too long."
     }
+  },
+  "seo": {
+    "keywords": [
+      "monthly housemaid riyadh",
+      "housemaid riyadh",
+      "maid service riyadh",
+      "trained cleaners riyadh",
+      "house cleaning riyadh",
+      "nanny riyadh",
+      "cook riyadh",
+      "elderly care riyadh",
+      "domestic workers riyadh"
+    ]
   }
 }

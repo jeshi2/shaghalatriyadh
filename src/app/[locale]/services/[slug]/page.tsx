@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { ButtonLink } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+import { Badge, Card } from "@/components/ui/Card";
 import { CheckIcon } from "@/components/ui/icons";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
+import { serviceAreaNames } from "@/config/business";
 import { getService, services, serviceSlugs } from "@/content/services";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Link } from "@/i18n/navigation";
@@ -28,13 +29,24 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: "services" });
   const tCommon = await getTranslations({ locale, namespace: "common" });
+  const tDetail = await getTranslations({
+    locale,
+    namespace: "servicesPage.detail",
+  });
+  const tSeo = await getTranslations({ locale, namespace: "seo" });
+
+  const name = t(`${slug}.name`);
 
   return buildPageMetadata({
     locale,
     path: `/services/${slug}`,
-    title: t(`${slug}.name`),
-    description: t(`${slug}.summary`),
+    // The city belongs in the title: it is what people search for.
+    title: tDetail("metaTitle", { service: name }),
+    description: tDetail("metaDescription", {
+      summary: t(`${slug}.summary`),
+    }),
     siteName: tCommon("brandName"),
+    keywords: [name, ...(tSeo.raw("keywords") as string[])],
   });
 }
 
@@ -162,6 +174,20 @@ export default async function ServiceDetailPage({
               </ul>
             </nav>
 
+            <div>
+              <h2 className="text-lg font-bold">{tPage("areasTitle")}</h2>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {serviceAreaNames(locale)
+                  .slice(0, 8)
+                  .map((area) => (
+                    <li key={area}>
+                      <Badge tone="neutral">{area}</Badge>
+                    </li>
+                  ))}
+              </ul>
+              <p className="mt-3 text-sm text-ink-500">{tPage("areasNote")}</p>
+            </div>
+
             <ButtonLink href="/contact" variant="outline" size="sm">
               {tPage("askAbout")}
             </ButtonLink>
@@ -179,6 +205,7 @@ export default async function ServiceDetailPage({
           url: pageUrl,
           providerName: tCommon("brandName"),
           providerUrl: localeUrl(locale, "/"),
+          locale,
         })}
       />
       <JsonLd

@@ -37,6 +37,12 @@ export type PageMetadataOptions = {
   title: string;
   description: string;
   siteName: string;
+  /**
+   * Search terms for this page. Modern engines largely ignore the keywords
+   * meta tag, so this exists to keep the target terms written down next to
+   * the page they belong to — the terms must also appear in the visible copy.
+   */
+  keywords?: readonly string[];
 };
 
 /** Absolute URL of the generated social card for a locale. */
@@ -56,12 +62,14 @@ export function buildPageMetadata({
   title,
   description,
   siteName,
+  keywords,
 }: PageMetadataOptions): Metadata {
   const canonical = localeUrl(locale, path);
 
   return {
     title,
     description,
+    ...(keywords?.length ? { keywords: [...keywords] } : {}),
     alternates: {
       canonical,
       languages: languageAlternates(path),

@@ -26,8 +26,8 @@ export const localeLabels = {
 
 /** BCP 47 tags used for `hreflang`, `og:locale` and `<html lang>`. */
 export const localeHtmlLang = {
-  ar: "ar-QA",
-  en: "en-QA",
+  ar: "ar-SA",
+  en: "en-SA",
 } as const satisfies Record<Locale, string>;
 
 export function getDirection(locale: Locale): "rtl" | "ltr" {

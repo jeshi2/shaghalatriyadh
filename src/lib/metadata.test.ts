@@ -27,15 +27,15 @@ describe("localeUrl", () => {
 describe("languageAlternates", () => {
   it("lists every locale plus x-default", () => {
     expect(languageAlternates("/contact")).toEqual({
-      "ar-QA": `${site.url}/ar/contact`,
-      "en-QA": `${site.url}/en/contact`,
+      "ar-SA": `${site.url}/ar/contact`,
+      "en-SA": `${site.url}/en/contact`,
       "x-default": `${site.url}/ar/contact`,
     });
   });
 
   it("points x-default at Arabic, the primary language", () => {
     expect(languageAlternates("/")["x-default"]).toBe(
-      languageAlternates("/")["ar-QA"],
+      languageAlternates("/")["ar-SA"],
     );
   });
 });
@@ -46,7 +46,7 @@ describe("buildPageMetadata", () => {
     path: "/services",
     title: "الخدمات المنزلية",
     description: "وصف الصفحة",
-    siteName: "قطر لخدمات المنازل",
+    siteName: "خدمات منزلية الرياض",
   });
 
   it("sets the canonical URL for the current locale", () => {
@@ -63,8 +63,8 @@ describe("buildPageMetadata", () => {
     expect(metadata.openGraph).toMatchObject({
       type: "website",
       url: `${site.url}/ar/services`,
-      locale: "ar_QA",
-      alternateLocale: ["en_QA"],
+      locale: "ar_SA",
+      alternateLocale: ["en_SA"],
       title: "الخدمات المنزلية",
     });
   });
@@ -76,7 +76,7 @@ describe("buildPageMetadata", () => {
           url: ogImageUrl("ar"),
           width: 1200,
           height: 630,
-          alt: "قطر لخدمات المنازل",
+          alt: "خدمات منزلية الرياض",
         },
       ],
     });

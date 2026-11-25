@@ -129,13 +129,19 @@ export default async function ContactPage({
           </span>
           <h2 className="text-lg font-bold">{t("addressTitle")}</h2>
           <address className="text-sm leading-relaxed text-ink-600 not-italic">
-            {business.legalName}
+            {locale === "ar" ? business.legalNameAr : business.legalName}
             <br />
-            {business.address.street}
+            {locale === "ar"
+              ? business.address.street
+              : business.address.streetEn}
             <br />
-            {business.address.district}, {business.address.city}
+            {locale === "ar"
+              ? `${business.address.district}، ${business.address.city}`
+              : `${business.address.districtEn}, ${business.address.cityEn}`}
             <br />
-            {business.address.country} — {business.address.poBox}
+            {locale === "ar"
+              ? `${business.address.country} — ${business.address.postalCode}`
+              : `${business.address.countryEn} — ${business.address.postalCode}`}
           </address>
         </Card>
 

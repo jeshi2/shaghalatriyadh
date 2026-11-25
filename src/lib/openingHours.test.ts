@@ -45,7 +45,7 @@ describe("groupOpeningHours", () => {
     expect(groups[1].hours).toEqual({ opens: "08:00", closes: "14:00" });
   });
 
-  it("starts the week on Sunday, as in Qatar", () => {
+  it("starts the week on Sunday, as in Saudi Arabia", () => {
     expect(dayOrder[0]).toBe("sunday");
     expect(dayOrder).toHaveLength(7);
   });

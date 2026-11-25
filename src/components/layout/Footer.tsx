@@ -1,10 +1,11 @@
-import { useFormatter, useTranslations } from "next-intl";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
-import { business } from "@/config/business";
+import { business, serviceAreaNames } from "@/config/business";
 import { mainNav } from "@/config/navigation";
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { groupOpeningHours, type DayKey } from "@/lib/openingHours";
 
 export function Footer() {
@@ -14,6 +15,7 @@ export function Footer() {
   const tDays = useTranslations("days");
   const tWhatsApp = useTranslations("whatsapp");
   const format = useFormatter();
+  const locale = useLocale() as Locale;
 
   const hourGroups = groupOpeningHours();
 
@@ -84,9 +86,13 @@ export function Footer() {
             <li className="flex items-start gap-2">
               <PinIcon className="mt-1 shrink-0 text-brand-700" />
               <span>
-                {business.address.street}, {business.address.district}
+                {locale === "ar"
+                  ? `${business.address.street}، ${business.address.district}`
+                  : `${business.address.streetEn}, ${business.address.districtEn}`}
                 <br />
-                {business.address.city}, {business.address.country}
+                {locale === "ar"
+                  ? `${business.address.city}، ${business.address.country}`
+                  : `${business.address.cityEn}, ${business.address.countryEn}`}
               </span>
             </li>
           </ul>
@@ -113,7 +119,7 @@ export function Footer() {
           </dl>
           <p className="mt-4 text-sm text-ink-500">
             {t("serviceAreas", {
-              areas: format.list(business.serviceAreas.slice(0, 5), {
+              areas: format.list(serviceAreaNames(locale).slice(0, 6), {
                 type: "unit",
               }),
             })}

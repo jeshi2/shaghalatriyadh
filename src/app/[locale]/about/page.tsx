@@ -10,7 +10,7 @@ import {
   ShieldIcon,
   UsersIcon,
 } from "@/components/ui/icons";
-import { business } from "@/config/business";
+import { business, serviceAreaNames } from "@/config/business";
 import { requireLocale } from "@/i18n/locale";
 import { buildPageMetadata } from "@/lib/metadata";
 
@@ -75,23 +75,29 @@ export default async function AboutPage({
             <dl className="flex flex-col gap-3 text-sm">
               <div>
                 <dt className="font-medium text-ink-900">
-                  {business.legalName}
+                  {locale === "ar" ? business.legalNameAr : business.legalName}
                 </dt>
-                <dd className="text-ink-500">{business.legalNameAr}</dd>
+                <dd className="text-ink-500">
+                  {locale === "ar" ? business.legalName : business.legalNameAr}
+                </dd>
               </div>
               <div>
                 <dt className="font-medium text-ink-900">
-                  {business.address.city}, {business.address.country}
+                  {locale === "ar"
+                    ? `${business.address.city}، ${business.address.country}`
+                    : `${business.address.cityEn}, ${business.address.countryEn}`}
                 </dt>
                 <dd className="text-ink-500">
-                  {business.address.street}, {business.address.district}
+                  {locale === "ar"
+                    ? `${business.address.street}، ${business.address.district}`
+                    : `${business.address.streetEn}, ${business.address.districtEn}`}
                 </dd>
               </div>
               <div>
                 <dt className="font-medium text-ink-900">
                   {business.licenceNumber}
                 </dt>
-                <dd className="text-ink-500">{business.address.poBox}</dd>
+                <dd className="text-ink-500">{business.address.postalCode}</dd>
               </div>
             </dl>
           </Card>
@@ -120,7 +126,7 @@ export default async function AboutPage({
           description={t("areasDescription")}
         />
         <ul className="mt-8 flex flex-wrap gap-2">
-          {business.serviceAreas.map((area) => (
+          {serviceAreaNames(locale).map((area) => (
             <li key={area}>
               <Badge tone="neutral">{area}</Badge>
             </li>

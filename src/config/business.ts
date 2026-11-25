@@ -1,11 +1,13 @@
+import type { Locale } from "@/i18n/routing";
+
 /**
  * Single source of truth for every piece of business information shown on the
  * site. Nothing else in the codebase should hard-code a phone number, an
  * address or an opening time.
  *
- * Values marked PLACEHOLDER must be replaced with the real details before the
- * site goes live. Each one can also be overridden with an environment variable
- * (see `.env.example`) so the same build can be reused across environments.
+ * The business operates in Riyadh, Saudi Arabia. Values marked PLACEHOLDER
+ * must be replaced with the real details before the site goes live; each one
+ * can also be overridden with an environment variable (see `.env.example`).
  */
 
 const env = {
@@ -14,96 +16,150 @@ const env = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
 };
 
-/** Digits only, international format, no `+` and no spaces (wa.me format). */
-const WHATSAPP_NUMBER_PLACEHOLDER = "97400000000";
+/**
+ * The business WhatsApp line: local 0596249823, which is +966 59 624 9823 in
+ * international format and 966596249823 in the digits-only form wa.me needs.
+ */
+const WHATSAPP_NUMBER = "966596249823";
+const PHONE_E164 = "+966596249823";
+
+/** A district the business serves, named in both site languages. */
+export type ServiceArea = {
+  key: string;
+  ar: string;
+  en: string;
+};
 
 export const business = {
-  /** PLACEHOLDER — legal/trading name of the company. */
-  legalName: "Qatar Home Services",
-  /** PLACEHOLDER — trading name in Arabic. */
-  legalNameAr: "قطر لخدمات المنازل",
+  /** PLACEHOLDER — trading name in Arabic (the primary language). */
+  legalNameAr: "خدمات منزلية الرياض",
+  /** PLACEHOLDER — trading name in English. */
+  legalName: "Riyadh Home Services",
 
-  /** PLACEHOLDER — commercial registration / licence number. */
-  licenceNumber: "CR-0000000",
+  /** PLACEHOLDER — Saudi commercial registration (السجل التجاري). */
+  licenceNumber: "CR-0000000000",
 
   whatsapp: {
-    /** PLACEHOLDER — replace with the real WhatsApp business number. */
-    number: env.whatsapp ?? WHATSAPP_NUMBER_PLACEHOLDER,
-    isPlaceholder: !env.whatsapp,
+    number: env.whatsapp ?? WHATSAPP_NUMBER,
   },
 
   phone: {
-    /** PLACEHOLDER — replace with the real landline/mobile number. */
-    e164: env.phone ?? "+97400000000",
+    e164: env.phone ?? PHONE_E164,
     get display() {
-      return formatQatarPhone(this.e164);
+      return formatSaudiPhone(this.e164);
+    },
+    /** How Saudi customers usually write it: 05X XXX XXXX. */
+    get local() {
+      return formatSaudiLocalPhone(this.e164);
     },
   },
 
   /** PLACEHOLDER — replace with the real enquiries inbox. */
-  email: env.email ?? "hello@example.qa",
+  email: env.email ?? "info@example.sa",
 
   address: {
     /** PLACEHOLDER — street address. */
-    street: "Building 00, Street 000, Zone 00",
-    /** PLACEHOLDER — district/area. */
-    district: "Al Sadd",
-    city: "Doha",
-    country: "Qatar",
-    countryCode: "QA",
-    /** PLACEHOLDER — postal/PO box. */
-    poBox: "P.O. Box 00000",
+    street: "طريق الملك فهد، مبنى 0000",
+    streetEn: "King Fahd Road, Building 0000",
+    /** PLACEHOLDER — district. */
+    district: "العليا",
+    districtEn: "Al Olaya",
+    city: "الرياض",
+    cityEn: "Riyadh",
+    region: "منطقة الرياض",
+    regionEn: "Riyadh Region",
+    country: "المملكة العربية السعودية",
+    countryEn: "Saudi Arabia",
+    countryCode: "SA",
+    /** PLACEHOLDER — postal code. */
+    postalCode: "12211",
   },
 
-  /** Approximate coordinates of central Doha — PLACEHOLDER. */
+  /** Central Riyadh — PLACEHOLDER until the office location is confirmed. */
   geo: {
-    latitude: 25.2854,
-    longitude: 51.531,
+    latitude: 24.7136,
+    longitude: 46.6753,
   },
 
   /**
-   * Opening hours in 24h local time (Asia/Qatar). `null` means closed.
-   * Schema.org day names are derived from the keys.
+   * Opening hours in 24h local time (Asia/Riyadh). `null` means closed.
+   * The Saudi working week runs Sunday to Thursday; Friday is the rest day.
    */
   openingHours: {
-    saturday: { opens: "08:00", closes: "20:00" },
-    sunday: { opens: "08:00", closes: "20:00" },
-    monday: { opens: "08:00", closes: "20:00" },
-    tuesday: { opens: "08:00", closes: "20:00" },
-    wednesday: { opens: "08:00", closes: "20:00" },
-    thursday: { opens: "08:00", closes: "20:00" },
+    sunday: { opens: "09:00", closes: "21:00" },
+    monday: { opens: "09:00", closes: "21:00" },
+    tuesday: { opens: "09:00", closes: "21:00" },
+    wednesday: { opens: "09:00", closes: "21:00" },
+    thursday: { opens: "09:00", closes: "21:00" },
     friday: null,
+    saturday: { opens: "09:00", closes: "21:00" },
   },
 
-  /** Areas served across Qatar, used for local SEO and the footer. */
+  /**
+   * Districts of Riyadh the business covers. These drive the footer, the
+   * about page and the `areaServed` property of the LocalBusiness schema, so
+   * they are the local-SEO surface of the site — keep them accurate.
+   */
   serviceAreas: [
-    "Doha",
-    "Al Rayyan",
-    "Al Wakrah",
-    "Lusail",
-    "The Pearl",
-    "West Bay",
-    "Al Khor",
-    "Umm Salal",
-    "Al Sadd",
-    "Mesaimeer",
-  ],
+    { key: "olaya", ar: "العليا", en: "Al Olaya" },
+    { key: "malqa", ar: "الملقا", en: "Al Malqa" },
+    { key: "narjis", ar: "النرجس", en: "Al Narjis" },
+    { key: "hittin", ar: "حطين", en: "Hittin" },
+    { key: "yasmin", ar: "الياسمين", en: "Al Yasmin" },
+    { key: "sahafa", ar: "الصحافة", en: "Al Sahafa" },
+    { key: "aqiq", ar: "العقيق", en: "Al Aqiq" },
+    { key: "qurtubah", ar: "قرطبة", en: "Qurtubah" },
+    { key: "rabwah", ar: "الربوة", en: "Al Rabwah" },
+    { key: "nasim", ar: "النسيم", en: "Al Naseem" },
+    { key: "suwaidi", ar: "السويدي", en: "Al Suwaidi" },
+    { key: "muruj", ar: "المروج", en: "Al Muruj" },
+    { key: "ishbiliyah", ar: "إشبيلية", en: "Ishbiliyah" },
+    { key: "munsiyah", ar: "المونسية", en: "Al Munsiyah" },
+    { key: "diriyah", ar: "الدرعية", en: "Diriyah" },
+  ] as const satisfies readonly ServiceArea[],
 
-  /** PLACEHOLDER — set to `null` to hide a social link in the footer. */
+  /** PLACEHOLDER — set to a URL to show the link, or leave null to hide it. */
   social: {
     instagram: null as string | null,
-    facebook: null as string | null,
     x: null as string | null,
+    snapchat: null as string | null,
   },
 } as const;
 
-/** Formats an E.164 Qatari number as `+974 0000 0000` for display. */
-export function formatQatarPhone(e164: string): string {
+/** Formats an E.164 Saudi number as `+966 59 624 9823`. */
+export function formatSaudiPhone(e164: string): string {
   const digits = e164.replace(/\D/g, "");
-  if (digits.startsWith("974") && digits.length === 11) {
-    return `+974 ${digits.slice(3, 7)} ${digits.slice(7)}`;
+  if (digits.startsWith("966") && digits.length === 12) {
+    return `+966 ${digits.slice(3, 5)} ${digits.slice(5, 8)} ${digits.slice(8)}`;
   }
   return e164;
+}
+
+/** Formats an E.164 Saudi mobile in the local form `059 624 9823`. */
+export function formatSaudiLocalPhone(e164: string): string {
+  const digits = e164.replace(/\D/g, "");
+  if (digits.startsWith("966") && digits.length === 12) {
+    const national = `0${digits.slice(3)}`;
+    return `${national.slice(0, 3)} ${national.slice(3, 6)} ${national.slice(6)}`;
+  }
+  return e164;
+}
+
+/** District names in the reading order of the requested locale. */
+export function serviceAreaNames(locale: Locale): string[] {
+  return business.serviceAreas.map((area) => area[locale]);
+}
+
+/** The city name, localised. */
+export function cityName(locale: Locale): string {
+  return locale === "ar" ? business.address.city : business.address.cityEn;
+}
+
+/** The country name, localised. */
+export function countryName(locale: Locale): string {
+  return locale === "ar"
+    ? business.address.country
+    : business.address.countryEn;
 }
 
 export type Business = typeof business;

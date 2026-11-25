@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { business } from "@/config/business";
+import { business, serviceAreaNames } from "@/config/business";
 import {
   buildBreadcrumbs,
   buildFaqPage,
@@ -12,9 +12,10 @@ const url = "https://example.qa/ar";
 
 describe("buildLocalBusiness", () => {
   const schema = buildLocalBusiness({
-    name: "قطر لخدمات المنازل",
-    description: "خدمات منزلية",
+    name: "خدمات منزلية الرياض",
+    description: "شغالات وخدمات منزلية في الرياض",
     url,
+    locale: "ar",
     image: `${url}/opengraph-image`,
   });
 
@@ -32,17 +33,39 @@ describe("buildLocalBusiness", () => {
     });
   });
 
-  it("describes the postal address and coordinates", () => {
+  it("describes the Riyadh postal address and coordinates", () => {
     expect(schema.address).toMatchObject({
       "@type": "PostalAddress",
-      addressLocality: business.address.city,
-      addressCountry: business.address.countryCode,
+      addressLocality: "الرياض",
+      addressRegion: business.address.region,
+      addressCountry: "SA",
+      postalCode: business.address.postalCode,
     });
     expect(schema.geo).toMatchObject({ "@type": "GeoCoordinates" });
   });
 
-  it("lists every served area as a City", () => {
-    expect(schema.areaServed).toHaveLength(business.serviceAreas.length);
+  it("uses the English address when the locale is English", () => {
+    const english = buildLocalBusiness({
+      name: "Riyadh Home Services",
+      description: "Domestic staff in Riyadh",
+      url,
+      locale: "en",
+    });
+
+    expect(english.address).toMatchObject({
+      addressLocality: "Riyadh",
+      addressRegion: business.address.regionEn,
+    });
+  });
+
+  it("serves Riyadh first, then every district it covers", () => {
+    const served = schema.areaServed as { "@type": string; name: string }[];
+
+    expect(served).toHaveLength(business.serviceAreas.length + 1);
+    expect(served[0]).toEqual({ "@type": "City", name: "الرياض" });
+    expect(served.slice(1).map((place) => place.name)).toEqual(
+      serviceAreaNames("ar"),
+    );
   });
 
   it("publishes only the days the office is open", () => {
@@ -80,8 +103,9 @@ describe("buildService", () => {
     description: "Childcare",
     serviceType: "Nanny",
     url: `${url}/services/nanny`,
-    providerName: "Qatar Home Services",
+    providerName: "Riyadh Home Services",
     providerUrl: url,
+    locale: "en",
   });
 
   it("links the service to the business by @id", () => {
@@ -89,10 +113,11 @@ describe("buildService", () => {
     expect(schema.provider).toMatchObject({ "@id": `${url}#business` });
   });
 
-  it("states the country it is offered in", () => {
+  it("states the city it is offered in, inside Saudi Arabia", () => {
     expect(schema.areaServed).toMatchObject({
-      "@type": "Country",
-      name: business.address.country,
+      "@type": "City",
+      name: "Riyadh",
+      containedInPlace: { "@type": "Country", name: "Saudi Arabia" },
     });
   });
 });

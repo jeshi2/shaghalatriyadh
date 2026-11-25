@@ -26,8 +26,8 @@ describe("direction handling", () => {
 });
 
 describe("locale metadata", () => {
-  it("provides a Qatar-specific BCP 47 tag for each locale", () => {
-    expect(localeHtmlLang).toEqual({ ar: "ar-QA", en: "en-QA" });
+  it("provides a Saudi BCP 47 tag for each locale", () => {
+    expect(localeHtmlLang).toEqual({ ar: "ar-SA", en: "en-SA" });
   });
 
   it("labels each locale in its own language", () => {

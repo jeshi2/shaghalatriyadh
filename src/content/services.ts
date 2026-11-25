@@ -1,11 +1,9 @@
-import type { ComponentType } from "react";
-import type { SVGProps } from "react";
+import type { ComponentType, SVGProps } from "react";
 import {
   BabyIcon,
   BroomIcon,
   ChefHatIcon,
   HeartHandsIcon,
-  SparkleIcon,
   UsersIcon,
 } from "@/components/ui/icons";
 
@@ -13,6 +11,9 @@ import {
  * The service catalogue holds only structure: the URL slug, the icon and the
  * display order. Every piece of copy lives in the message catalogues under
  * `services.<slug>`, so adding a language never means touching this file.
+ *
+ * The five services mirror what customers in Riyadh actually search for:
+ * شغالة بالشهر, مدربات تنظيف, مربية أطفال, طباخات and العناية بكبار السن.
  *
  * To add a service: add an entry here and the matching block to both
  * src/messages/ar.json and src/messages/en.json. The parity test fails if one
@@ -28,12 +29,11 @@ export type Service = {
 };
 
 export const services = [
-  { slug: "full-time-maid", icon: UsersIcon, featured: true },
-  { slug: "part-time-cleaning", icon: BroomIcon, featured: true },
-  { slug: "deep-cleaning", icon: SparkleIcon, featured: true },
+  { slug: "monthly-housemaid", icon: UsersIcon, featured: true },
+  { slug: "trained-cleaners", icon: BroomIcon, featured: true },
   { slug: "nanny", icon: BabyIcon, featured: true },
+  { slug: "cooks", icon: ChefHatIcon, featured: true },
   { slug: "elderly-care", icon: HeartHandsIcon, featured: true },
-  { slug: "cooking", icon: ChefHatIcon, featured: true },
 ] as const satisfies readonly Service[];
 
 export const featuredServices = services.filter((service) => service.featured);
@@ -43,3 +43,6 @@ export function getService(slug: string): Service | undefined {
 }
 
 export const serviceSlugs = services.map((service) => service.slug);
+
+/** The headline service: the term most Riyadh customers search for. */
+export const primaryServiceSlug: ServiceSlug = "monthly-housemaid";

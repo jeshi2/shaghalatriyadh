@@ -32,8 +32,19 @@ function valueAt(messages: Messages, path: string): unknown {
     );
 }
 
-const arKeys = flatten(ar as Messages);
-const enKeys = flatten(en as Messages);
+/**
+ * Keyword lists are researched separately for each language, so Arabic and
+ * English legitimately hold a different number of terms. Everything else must
+ * match key for key.
+ */
+const localeSpecific = ["seo.keywords"];
+
+function isLocaleSpecific(key: string): boolean {
+  return localeSpecific.some((prefix) => key.startsWith(`${prefix}.`));
+}
+
+const arKeys = flatten(ar as Messages).filter((key) => !isLocaleSpecific(key));
+const enKeys = flatten(en as Messages).filter((key) => !isLocaleSpecific(key));
 
 describe("translation dictionaries", () => {
   it("define the same keys in both locales", () => {
@@ -54,6 +65,24 @@ describe("translation dictionaries", () => {
         ).toBe(true);
       }
     }
+  });
+
+  it("gives both locales a non-empty keyword list", () => {
+    for (const messages of [ar, en]) {
+      const keywords = messages.seo.keywords;
+      expect(Array.isArray(keywords)).toBe(true);
+      expect(keywords.length).toBeGreaterThanOrEqual(5);
+      for (const keyword of keywords) {
+        expect(keyword.trim().length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("targets Riyadh in both keyword lists", () => {
+    expect(ar.seo.keywords.some((term) => term.includes("الرياض"))).toBe(true);
+    expect(
+      en.seo.keywords.some((term) => term.toLowerCase().includes("riyadh")),
+    ).toBe(true);
   });
 
   it("use the same ICU placeholders in both locales", () => {

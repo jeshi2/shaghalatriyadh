@@ -15,6 +15,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "servicesPage" });
 
   const tCommon = await getTranslations({ locale, namespace: "common" });
+  const tSeo = await getTranslations({ locale, namespace: "seo" });
 
   return buildPageMetadata({
     locale,
@@ -22,6 +23,7 @@ export async function generateMetadata({
     title: t("metaTitle"),
     description: t("metaDescription"),
     siteName: tCommon("brandName"),
+    keywords: tSeo.raw("keywords") as string[],
   });
 }
 

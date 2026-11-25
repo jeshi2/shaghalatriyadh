@@ -6,6 +6,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
+import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { ValueProps } from "@/components/sections/ValueProps";
 import type { FaqItem } from "@/components/sections/Faq";
 import { requireLocale } from "@/i18n/locale";
@@ -18,17 +19,21 @@ export async function generateMetadata({
   const { locale: localeParam } = await params;
   const locale = requireLocale(localeParam);
   const t = await getTranslations({ locale, namespace: "common" });
+  const tHome = await getTranslations({ locale, namespace: "home" });
+  const tSeo = await getTranslations({ locale, namespace: "seo" });
 
   return {
     ...buildPageMetadata({
       locale,
       path: "/",
-      title: `${t("brandName")} — ${t("tagline")}`,
-      description: t("tagline"),
+      title: tHome("metaTitle"),
+      description: tHome("metaDescription"),
       siteName: t("brandName"),
+      keywords: tSeo.raw("keywords") as string[],
     }),
-    // The homepage title already carries the brand, so skip the template.
-    title: { absolute: `${t("brandName")} — ${t("tagline")}` },
+    // The homepage title is written for search results, so it stands alone
+    // instead of going through the "%s | brand" template.
+    title: { absolute: tHome("metaTitle") },
   };
 }
 
@@ -45,6 +50,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <Hero />
       <ValueProps />
       <ServicesOverview />
+      <ServiceAreas />
       <HowItWorks />
       <Faq />
       <FinalCta />

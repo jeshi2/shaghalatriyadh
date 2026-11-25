@@ -3,21 +3,21 @@
 /* ------------------------------------------------------------------------- */
 /* Design tokens                                                             */
 /* ------------------------------------------------------------------------- */
-/* The palette is built around Qatar's maroon with a warm sand accent and a   */
-/* neutral "ink" scale for text and surfaces. WhatsApp green is reserved      */
-/* exclusively for WhatsApp actions so it keeps its meaning.                  */
+/* A deep navy brand scale with a warm sand accent and a neutral "ink" scale  */
+/* for text and surfaces. Navy keeps the WhatsApp green unmistakable as the   */
+/* contact action; that green is reserved for WhatsApp alone.                 */
 
 @theme {
-  --color-brand-50: #fdf2f5;
-  --color-brand-100: #fbe4ea;
-  --color-brand-200: #f5c6d3;
-  --color-brand-300: #ea9bb0;
-  --color-brand-400: #db6687;
-  --color-brand-500: #c23a63;
-  --color-brand-600: #a62550;
-  --color-brand-700: #8a1538; /* primary */
-  --color-brand-800: #6d1030;
-  --color-brand-900: #4d0b22;
+  --color-brand-50: #f1f6fb;
+  --color-brand-100: #e2edf7;
+  --color-brand-200: #c0d8ec;
+  --color-brand-300: #93badb;
+  --color-brand-400: #5d93c4;
+  --color-brand-500: #3572a8;
+  --color-brand-600: #20588a;
+  --color-brand-700: #123a5c; /* primary */
+  --color-brand-800: #0d2c46;
+  --color-brand-900: #091f31;
 
   --color-sand-50: #fbf7f0;
   --color-sand-100: #f5ecdc;
